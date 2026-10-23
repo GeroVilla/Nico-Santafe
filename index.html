@@ -1,0 +1,953 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Santa Fe 2026</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="theme-color" content="#C8102E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&display=swap">
+<style>
+/* Layout: iOS 26 style for the phone — a red hero that fades into the page (title, Masculino/Femenino capsule, tournament chips on glass), inset-grouped cards, floating Liquid Glass tab bar. Tokens mirror the "Cardenal" design system. */
+:root {
+  --bg: #F2F2F7; --surface: #FFFFFF; --surface-2: #E6E6EB; --ink: #111114; --ink-2: #5C5C66; --hairline: #C9C9D0;
+  --cardenal: #C8102E; --on-cardenal: #FFFFFF; --cardenal-ink: #B00D27;
+  --win: #1E7A3B; --on-win: #FFFFFF; --draw: #D1D1D6; --on-draw: #111114; --loss: #2C2C30; --on-loss: #FFFFFF;
+  --gold-ink: #8A5A00; --chrome: rgba(246, 246, 249, 0.86); --scrim: rgba(0, 0, 0, 0.36); --track: #E6E6EB;
+  --font-ui: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", system-ui, sans-serif;
+  --font-display: "Barlow Condensed", "SF Pro Display", -apple-system, system-ui, sans-serif;
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-6: 24px;
+  --radius-sm: 8px; --radius-md: 24px; --radius-lg: 28px; --radius-pill: 999px;
+  --tabbar-h: 64px; --bar-draw: #8E8E93;
+  --hero-a: #A80C25; --hero-b: #C8102E; --on-hero: #FFFFFF; --on-hero-2: rgba(255, 255, 255, 0.84);
+  --hero-glass: rgba(255, 255, 255, 0.16); --hero-edge: rgba(255, 255, 255, 0.34); --hero-sel: #FFFFFF; --hero-sel-ink: #B00D27;
+  --glass: rgba(250, 250, 252, 0.72); --glass-edge: rgba(255, 255, 255, 0.75); --glass-hi: rgba(255, 255, 255, 0.9); --glass-shadow: rgba(20, 20, 30, 0.18); --lens: rgba(200, 16, 46, 0.11); --sf-tint: rgba(200, 16, 46, 0.08);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #000000; --surface: #1C1C1E; --surface-2: #2C2C2E; --ink: #F5F5F7; --ink-2: #A1A1AA; --hairline: #3A3A3E;
+    --cardenal: #D7192F; --on-cardenal: #FFFFFF; --cardenal-ink: #FF6B78;
+    --win: #3DD06B; --on-win: #04210D; --draw: #48484A; --on-draw: #F5F5F7; --loss: #E5E5EA; --on-loss: #111114;
+    --gold-ink: #F2C14E; --chrome: rgba(18, 18, 20, 0.86); --scrim: rgba(0, 0, 0, 0.6); --track: #2C2C2E;
+    --hero-a: #4E0711; --hero-b: #8A1020; --on-hero: #FFFFFF; --on-hero-2: rgba(255, 255, 255, 0.8);
+    --hero-glass: rgba(255, 255, 255, 0.12); --hero-edge: rgba(255, 255, 255, 0.22); --hero-sel: #FFFFFF; --hero-sel-ink: #B00D27;
+    --glass: rgba(38, 38, 42, 0.62); --glass-edge: rgba(255, 255, 255, 0.14); --glass-hi: rgba(255, 255, 255, 0.2); --glass-shadow: rgba(0, 0, 0, 0.5); --lens: rgba(255, 107, 120, 0.18); --sf-tint: rgba(255, 107, 120, 0.14);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --hero-a: #4E0711; --hero-b: #8A1020; --on-hero: #FFFFFF; --on-hero-2: rgba(255, 255, 255, 0.8);
+  --hero-glass: rgba(255, 255, 255, 0.12); --hero-edge: rgba(255, 255, 255, 0.22); --hero-sel: #FFFFFF; --hero-sel-ink: #B00D27;
+  --glass: rgba(38, 38, 42, 0.62); --glass-edge: rgba(255, 255, 255, 0.14); --glass-hi: rgba(255, 255, 255, 0.2); --glass-shadow: rgba(0, 0, 0, 0.5); --lens: rgba(255, 107, 120, 0.18); --sf-tint: rgba(255, 107, 120, 0.14);
+  --bg: #000000; --surface: #1C1C1E; --surface-2: #2C2C2E; --ink: #F5F5F7; --ink-2: #A1A1AA; --hairline: #3A3A3E;
+  --cardenal: #D7192F; --on-cardenal: #FFFFFF; --cardenal-ink: #FF6B78;
+  --win: #3DD06B; --on-win: #04210D; --draw: #48484A; --on-draw: #F5F5F7; --loss: #E5E5EA; --on-loss: #111114;
+  --gold-ink: #F2C14E; --chrome: rgba(18, 18, 20, 0.86); --scrim: rgba(0, 0, 0, 0.6); --track: #2C2C2E;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink); font-family: var(--font-ui); font-size: 15px; line-height: 1.35;
+  -webkit-font-smoothing: antialiased; -webkit-tap-highlight-color: transparent;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--chrome); }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--cardenal-ink); outline-offset: 2px; }
+.wrap { max-width: 640px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.num { font-variant-numeric: tabular-nums; }
+.view, .sec, .list, .match, .inner, .filters .wrap { grid-template-columns: minmax(0, 1fr); }
+.view > *, .sec > *, .list > *, .match > *, .inner > * { min-width: 0; }
+
+/* Top bar + filters */
+.topbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--chrome); -webkit-backdrop-filter: saturate(180%) blur(20px); backdrop-filter: saturate(180%) blur(20px); border-bottom: 0.5px solid var(--hairline); }
+.tb-in { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 10px; padding-block: 10px; }
+.tb-crest { height: 40px; width: auto; display: block; }
+.tb-t { display: grid; min-width: 0; }
+.tb-name { margin: 0; font-family: var(--font-display); font-weight: 700; font-size: 26px; line-height: 26px; letter-spacing: .5px; text-transform: uppercase; color: var(--ink); }
+.tb-sub { font-size: 12px; line-height: 16px; color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tog { display: grid; grid-template-columns: 1fr 1fr; padding: 4px; border-radius: var(--radius-pill); background: var(--surface-2); border: 0.5px solid var(--hairline); }
+.cloud { min-height: 32px; padding: 0 12px; border: 0; border-radius: var(--radius-pill); background: transparent; color: var(--ink-2); font-size: 13px; font-weight: 700; cursor: pointer; transition: background-color .2s ease, color .2s ease; }
+.cloud[aria-pressed="true"] { background: var(--ink); color: var(--bg); box-shadow: 0 1px 4px rgba(0, 0, 0, .2); }
+.filters2 { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-3); padding-block: var(--space-4); }
+.seg2 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; padding: 4px; border-radius: 16px; background: var(--surface); border: 0.5px solid var(--hairline); }
+.seg2 button { min-height: 44px; border: 0; border-radius: 12px; background: transparent; color: var(--ink-2); font-size: 15px; font-weight: 700; cursor: pointer; transition: background-color .2s ease, color .2s ease; }
+.seg2 button[aria-selected="true"] { background: var(--surface-2); color: var(--ink); }
+.chips { display: flex; gap: var(--space-2); overflow-x: auto; scrollbar-width: none; margin: 0 -16px; padding: 0 16px; }
+.chips::-webkit-scrollbar { display: none; }
+.chip { flex: none; min-height: 38px; padding: 0 16px; border-radius: var(--radius-pill); background: var(--surface); border: 0.5px solid var(--hairline); color: var(--ink); font-size: 14px; font-weight: 700; cursor: pointer; transition: background-color .2s ease, color .2s ease; }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.chip:disabled { opacity: .4; cursor: default; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+@media (prefers-reduced-motion: reduce) { .cloud, .chip, .seg2 button { transition: none; } }
+
+/* Sections */
+main { padding-bottom: calc(var(--tabbar-h) + 12px + env(safe-area-inset-bottom, 0px) + var(--space-6)); }
+main .view { padding-top: 0; }
+.view { display: grid; gap: var(--space-6); padding-top: var(--space-4); }
+.sec { display: grid; gap: var(--space-2); min-width: 0; }
+.cap { margin: 0 4px; font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: .5px; text-transform: uppercase; color: var(--ink-2); }
+h2 { margin: 0; font-size: 22px; line-height: 28px; font-weight: 700; text-wrap: balance; }
+.card { background: var(--surface); border-radius: var(--radius-lg); border: 0.5px solid var(--hairline); min-width: 0; overflow: hidden; }
+.empty { padding: var(--space-6) var(--space-4); text-align: center; color: var(--ink-2); }
+
+/* Season strip */
+.strip { display: flex; gap: var(--space-2); overflow-x: auto; scrollbar-width: none; margin: 0 -16px; padding: 2px 16px; }
+.strip::-webkit-scrollbar { display: none; }
+.pill-card { flex: none; width: 210px; background: var(--surface); border: 0.5px solid var(--hairline); border-radius: var(--radius-md); padding: var(--space-3); display: grid; gap: 2px; }
+.pill-card .pc-n { font-size: 13px; font-weight: 600; }
+.pill-card .pc-r { font-size: 13px; color: var(--ink-2); }
+.pill-card.champ .pc-r { color: var(--gold-ink); font-weight: 700; }
+.pill-card .pc-b { font-size: 11px; font-weight: 600; letter-spacing: .4px; text-transform: uppercase; color: var(--ink-2); }
+
+/* Match card */
+.list { display: grid; gap: var(--space-3); }
+.match { display: grid; gap: var(--space-2); width: 100%; text-align: left; background: var(--surface); border: 0.5px solid var(--hairline); border-radius: var(--radius-md); padding: var(--space-3) var(--space-4); cursor: pointer; }
+.match:active { background: var(--surface-2); }
+.m-top { display: flex; align-items: center; gap: var(--space-2); min-width: 0; }
+.m-comp { flex: 1; min-width: 0; font-size: 12px; line-height: 16px; color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.m-comp b { color: var(--ink); font-weight: 600; }
+.tag { flex: none; font-size: 11px; font-weight: 600; padding: 1px 7px; border-radius: var(--radius-pill); background: var(--surface-2); color: var(--ink); }
+.tag.f { background: var(--cardenal); color: var(--on-cardenal); }
+.res { flex: none; width: 22px; height: 22px; border-radius: 6px; display: grid; place-items: center; font-size: 12px; font-weight: 700; }
+.res.G { background: var(--win); color: var(--on-win); }
+.res.E { background: var(--loss); color: var(--on-loss); }
+.res.P { background: var(--cardenal); color: var(--on-cardenal); }
+.teams { display: grid; gap: 6px; }
+.trow { display: grid; grid-template-columns: 28px 1fr auto; align-items: center; gap: var(--space-2); }
+.badge { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; font-size: 10px; font-weight: 700; letter-spacing: .2px; background: var(--surface-2); color: var(--ink-2); }
+.badge.sf { background: var(--cardenal); color: var(--on-cardenal); }
+.tn { font-size: 17px; line-height: 22px; font-weight: 500; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tn.w { font-weight: 700; }
+.sc { font-family: var(--font-display); font-weight: 700; font-size: 26px; line-height: 26px; min-width: 22px; text-align: right; font-variant-numeric: tabular-nums; color: var(--ink-2); }
+.sc.w { color: var(--ink); }
+.m-pen { font-size: 12px; color: var(--ink-2); padding-left: 36px; }
+.scorers { display: grid; gap: 2px; padding-left: 36px; font-size: 13px; line-height: 18px; }
+.scorers .s-sf { color: var(--cardenal-ink); }
+.scorers .s-op { color: var(--ink-2); }
+.m-foot { display: flex; align-items: center; gap: var(--space-2); font-size: 13px; line-height: 18px; color: var(--ink-2); border-top: 0.5px solid var(--hairline); padding-top: var(--space-2); }
+.m-foot span { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.chev { flex: none; width: 8px; height: 13px; }
+
+/* Next match */
+.next { background: var(--cardenal); color: var(--on-cardenal); border: 0; }
+.next .m-comp, .next .m-comp b, .next .m-foot, .next .tn, .next .sc { color: var(--on-cardenal); }
+.next .badge { background: rgba(255,255,255,.18); color: var(--on-cardenal); }
+.next .badge.sf { background: var(--on-cardenal); color: var(--cardenal); }
+.next .m-foot { border-top-color: rgba(255,255,255,.3); }
+.next .count { font-family: var(--font-display); font-weight: 700; font-size: 22px; line-height: 24px; text-align: right; }
+.next .count small { display: block; font-family: var(--font-ui); font-size: 11px; font-weight: 600; letter-spacing: .4px; text-transform: uppercase; }
+.next.match:active { background: var(--cardenal); opacity: .9; }
+.up-row { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: var(--space-3); }
+
+/* Partidos: Pasados / Hoy / Próximos */
+.sb { overflow: hidden; }
+.subtabs { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 0.5px solid var(--hairline); }
+.subtabs button { position: relative; border: 0; background: transparent; min-height: 52px; font-size: 17px; font-weight: 600; color: var(--ink-2); cursor: pointer; }
+.subtabs button[aria-selected="true"] { color: var(--ink); font-weight: 700; }
+.subtabs button[aria-selected="true"]::after { content: ""; position: absolute; left: 28%; right: 28%; bottom: 0; height: 3px; border-radius: 3px 3px 0 0; background: var(--cardenal); }
+.mhead { display: flex; justify-content: space-between; gap: var(--space-2); padding: 10px var(--space-4); background: var(--surface-2); font-size: 12px; line-height: 16px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; color: var(--ink); }
+.mhead span { font-weight: 600; color: var(--ink-2); letter-spacing: .3px; }
+.srow { display: grid; gap: var(--space-2); width: 100%; padding: 14px var(--space-3) 16px; border: 0; background: transparent; text-align: center; color: var(--ink); }
+button.srow { cursor: pointer; }
+button.srow:active { background: var(--surface-2); }
+.srow + .srow { border-top: 0.5px solid var(--hairline); }
+.s-comp { font-size: 13px; line-height: 17px; color: var(--ink-2); text-wrap: balance; }
+.s-main { display: grid; grid-template-columns: 90px 38px minmax(0, 1fr) 38px 90px; align-items: center; gap: 2px; }
+.s-main.up { grid-template-columns: 90px minmax(0, 1fr) 90px; }
+.s-team { display: grid; justify-items: center; gap: 5px; min-width: 0; }
+.s-team.lg .badge { width: 44px; height: 44px; font-size: 13px; }
+.crest { display: block; height: 46px; width: auto; margin-block: -1px; filter: drop-shadow(0 1px 1.5px rgba(0, 0, 0, .18)); }
+.board .crest { height: 58px; margin-block: -5px; }
+.s-tn { font-size: 13px; line-height: 16px; font-weight: 600; text-wrap: balance; overflow-wrap: break-word; max-width: 100%; }
+.s-sc { font-family: var(--font-display); font-weight: 700; font-size: 46px; line-height: 46px; text-align: center; font-variant-numeric: tabular-nums; color: var(--ink); }
+.s-sc.l { color: var(--ink-2); opacity: .6; }
+.s-mid { display: grid; justify-items: center; gap: 4px; font-size: 16px; font-weight: 700; }
+.s-mid small { font-size: 12px; line-height: 15px; font-weight: 500; color: var(--ink-2); }
+.s-mid.up span { font-size: 15px; }
+.s-mid.up small { font-size: 14px; font-weight: 700; color: var(--cardenal-ink); }
+.s-goals { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); font-size: 13px; line-height: 18px; padding: 0 var(--space-1); }
+.s-goals .gl { text-align: left; }
+.s-goals .gr { text-align: right; }
+.s-goals .sf { color: var(--cardenal-ink); }
+.s-goals .op { color: var(--ink-2); }
+.s-venue { font-size: 13px; line-height: 18px; color: var(--ink-2); }
+.s-empty { padding: var(--space-6) var(--space-4) var(--space-4); text-align: center; font-size: 15px; color: var(--ink-2); }
+.s-note { padding: var(--space-3) var(--space-4); font-size: 13px; color: var(--ink-2); border-top: 0.5px solid var(--hairline); }
+
+/* Compact rows (inset grouped) */
+.rows > * + * { border-top: 0.5px solid var(--hairline); }
+.row-i { display: grid; grid-template-columns: 1fr auto; gap: var(--space-3); align-items: center; padding: var(--space-3) var(--space-4); min-height: 44px; }
+.row-i .t { font-size: 15px; font-weight: 600; min-width: 0; }
+.row-i .sub { font-size: 13px; color: var(--ink-2); }
+.row-i .v { font-size: 13px; color: var(--ink-2); text-align: right; }
+button.row-i { width: 100%; text-align: left; border: 0; background: transparent; cursor: pointer; }
+.rows > * + button.row-i { border-top: 0.5px solid var(--hairline); }
+
+/* Tables */
+.tbl-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; font-variant-numeric: tabular-nums; }
+th { font-size: 11px; font-weight: 600; letter-spacing: .4px; text-transform: uppercase; color: var(--ink-2); text-align: right; padding: var(--space-2) 6px; border-bottom: 0.5px solid var(--hairline); }
+td { text-align: right; padding: 7px 6px; border-bottom: 0.5px solid var(--hairline); white-space: nowrap; }
+th:first-child, td:first-child { text-align: right; width: 28px; padding-left: var(--space-3); color: var(--ink-2); }
+th:nth-child(2), td:nth-child(2) { text-align: left; width: 99%; }
+td:nth-child(2) { font-weight: 500; color: var(--ink); }
+td:last-child, th:last-child { padding-right: var(--space-4); font-weight: 700; }
+tr.sf td { background: var(--cardenal); color: var(--on-cardenal); font-weight: 700; }
+tr.cut td { border-bottom: 1.5px dashed var(--ink-2); }
+tbody tr:last-child td { border-bottom: 0; }
+.tnote { margin: 0; padding: var(--space-3) var(--space-4); font-size: 13px; color: var(--ink-2); border-top: 0.5px solid var(--hairline); }
+.status { font-size: 13px; color: var(--ink-2); margin: 0 4px; }
+.status.champ { color: var(--gold-ink); font-weight: 700; }
+.comp-head { display: grid; gap: 2px; margin: 0 4px; }
+.out { font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: var(--radius-pill); }
+.out.ok { background: var(--win); color: var(--on-win); }
+.out.ko { background: var(--loss); color: var(--on-loss); }
+.out.el { background: var(--cardenal); color: var(--on-cardenal); }
+.out.champ { background: var(--gold-ink); color: var(--surface); }
+.out.wait { background: var(--surface-2); color: var(--ink); }
+
+/* Standings: summary card + clean list */
+.sumcard { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 14px; align-items: center; padding: 18px; border-radius: var(--radius-lg); background: var(--cardenal); color: var(--on-cardenal); }
+.sumcard .crest { height: 66px; margin: 0; }
+.sum-big { font-family: var(--font-display); font-weight: 700; font-size: 46px; line-height: 44px; font-variant-numeric: tabular-nums; }
+.sum-big small { font-family: var(--font-ui); font-size: 15px; font-weight: 600; opacity: .85; }
+.sum-big .ord { font-size: .55em; vertical-align: .6em; margin-left: 1px; }
+.sum-t { font-weight: 700; font-size: 15px; }
+.sum-f { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.sum-f span { font-size: 12px; font-weight: 600; line-height: 16px; padding: 3px 9px; border-radius: var(--radius-pill); background: rgba(255, 255, 255, .18); border: 0.5px solid rgba(255, 255, 255, .38); }
+.pt-h, .pt-r { display: grid; grid-template-columns: 18px 28px minmax(0, 1fr) 24px 24px 24px 24px 30px 28px; gap: 4px; align-items: center; padding: 0 14px 0 8px; font-variant-numeric: tabular-nums; }
+.pt-h { height: 40px; font-size: 10.5px; font-weight: 700; letter-spacing: .3px; text-transform: uppercase; color: var(--ink-2); }
+.pt-h span:nth-child(2) { grid-column: 2 / 4; }
+.pt-h span:nth-child(n+3) { text-align: right; }
+.pt-r { position: relative; min-height: 46px; font-size: 14px; }
+.pt-r span:nth-child(n+4) { text-align: right; color: var(--ink-2); }
+.pt-r .pts { color: var(--ink); font-weight: 800; font-size: 15px; }
+.pt-r .pos { color: var(--ink-2); text-align: right; font-size: 13px; }
+.pt-r .nm { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pt-r .badge { width: 26px; height: 26px; font-size: 9px; margin: auto; }
+.pt-r .crest { height: 30px; margin: auto; }
+.pt-r + .pt-r::before { content: ""; position: absolute; top: 0; left: 58px; right: 0; border-top: 0.5px solid var(--hairline); }
+.pt-r.in::after { content: ""; position: absolute; left: 0; top: 10px; bottom: 10px; width: 3px; border-radius: 0 3px 3px 0; background: var(--win); }
+.pt-r.sf { background: var(--sf-tint); }
+.pt-r.sf .nm, .pt-r.sf .pts { color: var(--cardenal-ink); }
+.pt-r.sf span:nth-child(n+4):not(.pts) { color: var(--ink); }
+.pt-cut { display: flex; align-items: center; gap: 8px; padding: 4px 14px; font-size: 10.5px; font-weight: 700; letter-spacing: .4px; text-transform: uppercase; color: var(--ink-2); }
+.pt-cut::before, .pt-cut::after { content: ""; flex: 1; border-top: 1.5px dashed var(--hairline); }
+
+/* Record card */
+.rec { padding: 18px; }
+.rec-top { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.rec-top b { font-size: 17px; }
+.rec-top span { font-size: 13px; color: var(--ink-2); }
+.rec-three { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 10px; }
+.rec-three div, .rec-goals div { display: grid; }
+.rn { font-family: var(--font-display); font-weight: 700; font-size: 44px; line-height: 44px; font-variant-numeric: tabular-nums; color: var(--ink); }
+.rn.g { color: var(--win); }
+.rn.r { color: var(--cardenal-ink); }
+.rec small { font-size: 12px; line-height: 15px; font-weight: 600; color: var(--ink-2); }
+.rec-bar { display: flex; gap: 3px; height: 12px; margin-top: 12px; }
+.rec-bar i { display: block; border-radius: 6px; min-width: 4px; }
+.rec-bar.thin { height: 8px; margin-top: 10px; }
+.rec-sep { border-top: 0.5px solid var(--hairline); margin: 16px -18px 14px; }
+.rec-goals { display: grid; grid-template-columns: 1fr auto 1fr; align-items: end; }
+.rec-goals .rn { font-size: 40px; line-height: 40px; }
+.rec-goals div:last-child { text-align: right; }
+.rec-chip { align-self: center; font-size: 13px; font-weight: 700; background: var(--surface-2); border-radius: var(--radius-pill); padding: 4px 10px; }
+
+/* Stats */
+.kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-2); }
+.kpi { background: var(--surface); border: 0.5px solid var(--hairline); border-radius: var(--radius-md); padding: var(--space-3); display: grid; gap: 2px; }
+.kpi .k { font-size: 12px; line-height: 15px; color: var(--ink-2); font-weight: 600; }
+.kpi .n { font-family: var(--font-display); font-weight: 700; font-size: 34px; line-height: 36px; font-variant-numeric: tabular-nums; }
+.kpi.win .n { color: var(--win); }
+.kpi.red .n { color: var(--cardenal-ink); }
+.form { display: flex; gap: var(--space-1); flex-wrap: wrap; padding: var(--space-3) var(--space-4); align-items: center; }
+.form .lbl { font-size: 13px; color: var(--ink-2); margin-right: var(--space-2); }
+.bars { display: grid; gap: var(--space-3); padding: var(--space-3) var(--space-4) var(--space-4); }
+.bar-row { display: grid; grid-template-columns: 22px minmax(0, 1fr) 36px; gap: var(--space-2); align-items: center; }
+.bar-row .rk { font-size: 13px; color: var(--ink-2); text-align: right; font-variant-numeric: tabular-nums; }
+.bar-row .nm { font-size: 15px; font-weight: 600; display: flex; gap: 6px; align-items: baseline; min-width: 0; }
+.bar-row .nm span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bar-row .nm small { font-size: 12px; font-weight: 400; color: var(--ink-2); white-space: nowrap; }
+.bar-row .ct { font-family: var(--font-display); font-weight: 700; font-size: 24px; text-align: right; font-variant-numeric: tabular-nums; }
+.track { height: 6px; border-radius: 3px; background: var(--track); overflow: hidden; margin-top: 4px; }
+.track i { display: block; height: 100%; background: var(--cardenal); border-radius: 3px; }
+.track.alt i { background: var(--ink-2); }
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2); }
+.period { display: grid; gap: var(--space-2); padding: var(--space-3) var(--space-4) var(--space-4); }
+.prow { display: grid; grid-template-columns: 52px 1fr 1fr; gap: var(--space-2); align-items: center; font-size: 13px; }
+.prow .pl { color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.pbar { display: flex; align-items: center; gap: 6px; font-variant-numeric: tabular-nums; }
+.pbar i { display: block; height: 14px; border-radius: 4px; min-width: 2px; }
+.pbar.for i { background: var(--cardenal); }
+.pbar.ag i { background: var(--ink-2); }
+.legend { display: flex; gap: var(--space-4); font-size: 12px; color: var(--ink-2); padding: var(--space-3) var(--space-4) 0; }
+.legend span::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; background: var(--cardenal); }
+.legend span.ag::before { background: var(--ink-2); }
+
+/* Footer */
+.foot { font-size: 12px; line-height: 17px; color: var(--ink-2); display: grid; gap: var(--space-1); padding: 0 4px; }
+
+/* Tab bar: floating Liquid Glass capsule */
+.tabbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 25; pointer-events: none; padding: 0 max(16px, env(safe-area-inset-right, 0px)) calc(env(safe-area-inset-bottom, 0px) + 12px) max(16px, env(safe-area-inset-left, 0px)); }
+.glass { pointer-events: auto; position: relative; max-width: 420px; height: var(--tabbar-h); margin: 0 auto; padding: 6px; display: grid; grid-template-columns: repeat(3, 1fr); border-radius: var(--radius-pill); background: var(--glass); border: 0.5px solid var(--glass-edge); -webkit-backdrop-filter: blur(24px) saturate(190%); backdrop-filter: blur(24px) saturate(190%); box-shadow: 0 12px 32px var(--glass-shadow), 0 2px 6px rgba(0, 0, 0, .06), inset 0 1px 0 var(--glass-hi), inset 0 -1px 1px rgba(0, 0, 0, .05); }
+.glass::before { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; background: linear-gradient(180deg, rgba(255, 255, 255, .22), rgba(255, 255, 255, 0) 55%); }
+.lens { position: absolute; top: 6px; bottom: 6px; left: 6px; width: calc((100% - 12px) / 3); border-radius: var(--radius-pill); background: var(--lens); box-shadow: inset 0 1px 0 var(--glass-hi), inset 0 0 0 0.5px var(--glass-edge); transform: translateX(calc(var(--i, 0) * 100%)); transition: transform .45s cubic-bezier(.3, 1.35, .45, 1); }
+.glass button { position: relative; z-index: 1; border: 0; background: transparent; display: grid; place-items: center; align-content: center; gap: 2px; font-size: 11px; font-weight: 600; color: var(--ink); cursor: pointer; border-radius: var(--radius-pill); transition: color .2s ease, transform .15s ease; }
+.glass button svg { width: 24px; height: 24px; }
+.glass button:active { transform: scale(.94); }
+.glass button[aria-current="page"] { color: var(--cardenal-ink); }
+@media (prefers-reduced-motion: reduce) { .lens, .glass button { transition: none; } }
+
+/* Sheet */
+.scrim { position: fixed; inset: 0; z-index: 40; background: var(--scrim); }
+.sheet { position: fixed; left: 0; right: 0; bottom: 0; z-index: 41; max-height: calc(100% - 40px - env(safe-area-inset-top, 0px)); overflow-y: auto; overscroll-behavior: contain; background: var(--bg); border-radius: var(--radius-lg) var(--radius-lg) 0 0; padding-bottom: calc(env(safe-area-inset-bottom, 0px) + var(--space-6)); animation: up .28s cubic-bezier(.2,.8,.2,1); }
+@keyframes up { from { transform: translateY(40px); opacity: .6; } to { transform: none; opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .sheet { animation: none; } }
+.sheet .grab { width: 36px; height: 5px; border-radius: 3px; background: var(--hairline); margin: 8px auto 0; }
+.sheet .bar { display: flex; justify-content: space-between; align-items: center; padding-top: var(--space-2); }
+.sheet .close { border: 0; background: var(--surface-2); border-radius: var(--radius-pill); min-height: 32px; padding: 0 14px; font-weight: 600; font-size: 14px; cursor: pointer; }
+.sheet .inner { max-width: 640px; margin: 0 auto; display: grid; gap: var(--space-4); }
+.board { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: var(--space-3); padding: var(--space-4); text-align: center; }
+.board .side { display: grid; justify-items: center; gap: 6px; min-width: 0; }
+.board .badge { width: 48px; height: 48px; font-size: 14px; }
+.board .nm { font-size: 15px; font-weight: 600; line-height: 19px; }
+.board .big { font-family: var(--font-display); font-weight: 700; font-size: 56px; line-height: 56px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.board .big .dash { color: var(--ink-2); margin: 0 4px; }
+.board-sub { text-align: center; font-size: 13px; color: var(--ink-2); padding: 0 var(--space-4) var(--space-4); margin-top: calc(-1 * var(--space-2)); }
+.tl { display: grid; }
+.tl .ev { display: grid; grid-template-columns: 58px minmax(0, 1fr); gap: var(--space-2); padding: 10px var(--space-4); align-items: start; }
+.tl .ev + .ev { border-top: 0.5px solid var(--hairline); }
+.tl .min { font-family: var(--font-display); font-weight: 700; font-size: 18px; line-height: 20px; font-variant-numeric: tabular-nums; }
+.tl .ev.sf .min { color: var(--cardenal-ink); }
+.tl .ev .who { font-size: 15px; font-weight: 600; }
+.tl .ev .det { font-size: 13px; color: var(--ink-2); }
+.tl .ev .rc { display: inline-block; width: 9px; height: 12px; border-radius: 2px; background: var(--cardenal); vertical-align: -1px; margin-right: 6px; }
+.sbars { display: grid; gap: var(--space-3); padding: var(--space-4); }
+.sbar .lab { display: grid; grid-template-columns: 1fr auto 1fr; font-size: 13px; align-items: baseline; }
+.sbar .lab b { font-size: 15px; font-variant-numeric: tabular-nums; }
+.sbar .lab b:last-child { text-align: right; }
+.sbar .lab span { color: var(--ink-2); text-align: center; }
+.sbar .dual { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-top: 4px; }
+.sbar .dual div { height: 6px; border-radius: 3px; background: var(--track); overflow: hidden; display: flex; }
+.sbar .dual div:first-child { justify-content: flex-end; }
+.sbar .dual i { display: block; height: 100%; border-radius: 3px; background: var(--cardenal); }
+.sbar .dual div:last-child i { background: var(--ink-2); }
+.info { display: grid; }
+.info .row-i .v { color: var(--ink); max-width: 60vw; }
+.noscroll { overflow: hidden; }
+</style>
+
+<header class="topbar">
+  <div class="wrap tb-in">
+    <img class="tb-crest" src="data:image/png;base64,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" alt="">
+    <div class="tb-t"><span class="tb-name">Santa Fe</span><span class="tb-sub" id="tb-sub">Temporada 2026 · Masculino</span></div>
+    <div class="tog" role="group" aria-label="Rama">
+      <button class="cloud" id="b-M" data-b="M" aria-pressed="true" aria-label="Masculino">Masc.</button>
+      <button class="cloud" id="b-F" data-b="F" aria-pressed="false" aria-label="Femenino">Fem.</button>
+    </div>
+  </div>
+</header>
+<h1 class="sr-only" id="title">Partidos</h1>
+
+<div class="wrap filters2">
+  <div class="seg2" id="subseg" role="tablist" aria-label="Partidos"></div>
+  <div class="chips" role="group" aria-label="Torneo">
+    <button class="chip" id="k-all" data-k="all" aria-pressed="true">Todos</button>
+    <button class="chip" id="k-liga" data-k="liga" aria-pressed="false">Liga</button>
+    <button class="chip" id="k-copa" data-k="copa" aria-pressed="false">Copa</button>
+    <button class="chip" id="k-int" data-k="int" aria-pressed="false">Internacional</button>
+  </div>
+</div>
+
+<main class="wrap">
+  <div id="v-partidos" class="view"></div>
+  <div id="v-posiciones" class="view" hidden></div>
+  <div id="v-estadisticas" class="view" hidden></div>
+</main>
+
+<nav class="tabbar" aria-label="Secciones">
+  <div class="glass" id="glass">
+    <span class="lens" aria-hidden="true"></span>
+    <button id="t-partidos" data-tab="partidos" aria-current="page">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>
+      Partidos
+    </button>
+    <button id="t-posiciones" data-tab="posiciones">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><path d="M4.5 6h.01M4.5 12h.01M4.5 18h.01" stroke-width="2.6"/></svg>
+      Posiciones
+    </button>
+    <button id="t-estadisticas" data-tab="estadisticas">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M5 20V12M12 20V5M19 20v-9"/></svg>
+      Estadísticas
+    </button>
+  </div>
+</nav>
+
+<div id="scrim" class="scrim" hidden></div>
+<div id="sheet" class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title" hidden></div>
+
+<script type="application/json" id="sf-data">
+{
+"updated":"2026-10-23",
+"_formato":"Formato: matches[] = partidos jugados. b = rama (M masculino, F femenino); c = clave de torneo en competitions; st = fase; d = fecha y hora local de Colombia (AAAA-MM-DDTHH:MM, o solo AAAA-MM-DD si no hay hora); h/a = local/visitante; hs/as = goles; pen = [penales local, penales visitante]; g = goles [minuto, 1 si cuenta para Santa Fe / 0 si para el rival, autor, asistencia, 'pen'|'og'|'']; r = expulsiones [minuto, 1 Santa Fe / 0 rival, jugador]; s = estadísticas {clave: [Santa Fe, rival]} con pos=posesión %, sh=remates, sot=al arco, co=córners, fo=faltas, ye=amarillas, re=rojas, sv=atajadas, off=fueras de lugar, pa=pases buenos, pt=pases totales; upcoming[] = próximos partidos con el mismo formato sin marcador; tables[] = tablas, rows = [equipo, PJ, G, E, P, GF, GC, Pts] en orden de posición, q = cuántos clasifican.",
+"competitions":{
+"liga2":{"n":"Liga BetPlay 2026-II","k":"liga","b":"M","res":"En juego · 6.º con 25 pts en 14 partidos"},
+"copa":{"n":"Copa BetPlay 2026","k":"copa","b":"M","res":"En cuartos de final"},
+"suda":{"n":"Copa Sudamericana 2026","k":"int","b":"M","res":"Eliminado en cuartos por Vasco da Gama"},
+"liber":{"n":"Copa Libertadores 2026","k":"int","b":"M","res":"3.º del Grupo E · pasó a la Sudamericana"},
+"superliga":{"n":"Superliga BetPlay 2026","k":"copa","b":"M","res":"Campeón","champ":true},
+"liberf":{"n":"Libertadores Femenina 2026","k":"int","b":"F","res":"En cuartos de final · 2.º del Grupo A"},
+"ligaf":{"n":"Liga Femenina 2026","k":"liga","b":"F","res":"Subcampeón · perdió la final con Cali"}
+},
+"matches":[
+{"id":"e401845355","b":"M","c":"superliga","st":"Final · ida","d":"2026-01-15T19:30","h":"Junior","a":"Santa Fe","hs":1,"as":1,"v":"Metropolitano, Barranquilla","g":[["45+6'",1,"Hugo Rodallega","",""],["73'",0,"Teófilo Gutiérrez","",""]],"r":[["90+11'",0,"Teófilo Gutiérrez"]],"s":{"pos":[33.6,66.4],"sh":[8,14],"sot":[3,3],"co":[7,7],"fo":[18,18],"ye":[3,2],"re":[0,1],"sv":[2,2],"off":[0,0]},"att":24709},
+{"id":"e401845356","b":"M","c":"superliga","st":"Final · vuelta","d":"2026-01-21T19:30","h":"Santa Fe","a":"Junior","hs":3,"as":0,"v":"El Campín, Bogotá","g":[["5'",1,"Ewil Murillo","",""],["45+3'",1,"Hugo Rodallega","",""],["90+4'",1,"Nahuel Bustos","",""]],"s":{"pos":[29.4,70.6],"sh":[13,15],"sot":[6,4],"co":[2,7],"fo":[16,8],"ye":[5,4],"re":[0,0],"sv":[4,3],"off":[0,0]},"att":30398,"note":"Santa Fe campeón de la Superliga: 4-1 en el global"},
+{"id":"f01","b":"F","c":"ligaf","st":"Fecha 1","d":"2026-02-15T15:00","h":"Once Caldas","a":"Santa Fe","hs":0,"as":3,"v":"Palogrande, Manizales","g":[["44'",1,"Mariana Zamorano","",""],["45'",1,"N. Orozco","",""],["54'",1,"Mariana Zamorano","",""]]},
+{"id":"f02","b":"F","c":"ligaf","st":"Fecha 2","d":"2026-02-25T16:00","h":"Santa Fe","a":"Nacional","hs":0,"as":3,"v":"El Campín, Bogotá","g":[["40'",0,"S. Cedeño","",""],["45+2'",0,"S. García","",""],["61'",0,"K. Ibargüen","",""]]},
+{"id":"f03","b":"F","c":"ligaf","st":"Fecha 3","d":"2026-03-09T15:00","h":"Santa Fe","a":"Bucaramanga","hs":5,"as":0,"v":"Metropolitano de Techo, Bogotá","g":[["7'",1,"Mariana Zamorano","",""],["16'",1,"Ysaura Viso","",""],["29'",1,"N. Orozco","",""],["31'",1,"D. Garavito","",""],["43'",1,"M. Carvajal","",""]]},
+{"id":"f04","b":"F","c":"ligaf","st":"Fecha 4","d":"2026-03-15T15:00","h":"Orsomarso","a":"Santa Fe","hs":1,"as":0,"v":"Raúl Miranda, Yumbo","g":[["48'",0,"F. Asprilla","",""]]},
+{"id":"f05","b":"F","c":"ligaf","st":"Fecha 5","d":"2026-03-23T13:00","h":"Santa Fe","a":"Cali","hs":1,"as":1,"v":"El Campín, Bogotá","g":[["6'",0,"M. Vásquez","",""],["49'",1,"Ysaura Viso","",""]]},
+{"id":"f06","b":"F","c":"ligaf","st":"Fecha 6","d":"2026-03-28T17:00","h":"América","a":"Santa Fe","hs":1,"as":2,"v":"Pascual Guerrero, Cali","g":[["37'",1,"M. Silva","",""],["44'",0,"Catalina Usme","",""],["82'",1,"F. Graterol","",""]]},
+{"id":"e401865477","b":"M","c":"liber","st":"Grupo E · fecha 1","d":"2026-04-09T21:00","h":"Santa Fe","a":"Peñarol","hs":1,"as":1,"v":"El Campín, Bogotá","g":[["20'",1,"Emanuel Olivera","Omar Fernández",""],["59'",0,"Douglas Arezo","",""]],"s":{"pos":[55.2,44.8],"sh":[15,16],"sot":[2,6],"co":[4,4],"fo":[17,5],"ye":[4,1],"re":[0,0],"sv":[5,0],"off":[0,2],"pa":[278,220],"pt":[372,298]}},
+{"id":"e401865496","b":"M","c":"liber","st":"Grupo E · fecha 2","d":"2026-04-15T19:30","h":"Corinthians","a":"Santa Fe","hs":2,"as":0,"v":"Neo Química Arena, São Paulo","g":[["51'",0,"Raniele","Gustavo Henrique",""],["80'",0,"Gustavo Henrique","Rodrigo Garro",""]],"s":{"pos":[34.5,65.5],"sh":[6,14],"sot":[1,9],"co":[5,8],"fo":[20,5],"ye":[0,1],"re":[0,0],"sv":[7,1],"off":[0,1],"pa":[212,468],"pt":[276,536]}},
+{"id":"f07","b":"F","c":"ligaf","st":"Fecha 7","d":"2026-04-19T17:00","h":"Santa Fe","a":"Inter Bogotá","hs":3,"as":1,"v":"El Campín, Bogotá","g":[["3'",0,"W. Cabrera","",""],["41'",1,"Andrea Pérez","",""],["74'",1,"Ysaura Viso","",""],["76'",1,"Ysaura Viso","",""]]},
+{"id":"f08","b":"F","c":"ligaf","st":"Fecha 8","d":"2026-04-26T15:00","h":"Pasto","a":"Santa Fe","hs":0,"as":0,"v":"Municipal de Ipiales","g":[]},
+{"id":"e401865513","b":"M","c":"liber","st":"Grupo E · fecha 3","d":"2026-04-29T17:00","h":"Platense","a":"Santa Fe","hs":2,"as":1,"v":"Ciudad de Vicente López, Buenos Aires","g":[["57'",0,"Tomás Nasif","Guido Mainero",""],["63'",0,"Mateo Mendía","Guido Mainero",""],["90+4'",1,"Franco Fagúndez","Emanuel Olivera",""]],"s":{"pos":[50.7,49.3],"sh":[8,13],"sot":[1,7],"co":[1,3],"fo":[16,13],"ye":[3,2],"re":[0,0],"sv":[5,0],"off":[0,2],"pa":[253,242],"pt":[339,325]}},
+{"id":"f09","b":"F","c":"ligaf","st":"Fecha 9","d":"2026-05-03T12:30","h":"Santa Fe","a":"Millonarios","hs":0,"as":0,"v":"El Campín, Bogotá","g":[]},
+{"id":"e401865525","b":"M","c":"liber","st":"Grupo E · fecha 4","d":"2026-05-06T19:30","h":"Santa Fe","a":"Corinthians","hs":1,"as":1,"v":"El Campín, Bogotá","g":[["59'",1,"Hugo Rodallega","Jáder Obrian",""],["90+3'",0,"Gustavo Henrique","Mateuzinho",""]],"s":{"pos":[41.2,58.8],"sh":[15,11],"sot":[7,3],"co":[4,6],"fo":[17,4],"ye":[4,0],"re":[0,0],"sv":[2,6],"off":[3,1],"pa":[242,359],"pt":[303,426]}},
+{"id":"f10","b":"F","c":"ligaf","st":"Fecha 10","d":"2026-05-11T16:30","h":"Junior","a":"Santa Fe","hs":1,"as":1,"v":"Romelio Martínez, Barranquilla","g":[["12'",0,"M. Baldovino","",""],["71'",1,"C. Motta","",""]]},
+{"id":"f11","b":"F","c":"ligaf","st":"Fecha 11","d":"2026-05-17T15:30","h":"Santa Fe","a":"Medellín","hs":2,"as":0,"v":"Héctor El Zipa González, Zipaquirá","g":[["4'",1,"Mariana Zamorano","",""],["31'",1,"Mariana Zamorano","",""]]},
+{"id":"e401865540","b":"M","c":"liber","st":"Grupo E · fecha 5","d":"2026-05-19T19:00","h":"Santa Fe","a":"Platense","hs":2,"as":1,"v":"El Campín, Bogotá","g":[["48'",1,"Iván Scarpeta","Omar Fernández",""],["71'",1,"Hugo Rodallega","Jáder Obrian",""],["73'",0,"Augusto Lotti","",""]],"s":{"pos":[54.6,45.4],"sh":[12,5],"sot":[4,2],"co":[5,3],"fo":[13,10],"ye":[5,3],"re":[0,0],"sv":[1,2],"off":[2,2],"pa":[271,199],"pt":[365,298]}},
+{"id":"f12","b":"F","c":"ligaf","st":"Fecha 12","d":"2026-05-23T15:00","h":"Inter Palmira","a":"Santa Fe","hs":0,"as":2,"v":"Francisco Rivera Escobar, Palmira","g":[["12'",1,"Mariana Zamorano","",""],["62'",1,"Mariana Zamorano","",""]]},
+{"id":"e401865556","b":"M","c":"liber","st":"Grupo E · fecha 6","d":"2026-05-27T19:30","h":"Peñarol","a":"Santa Fe","hs":0,"as":1,"v":"Campeón del Siglo, Montevideo","g":[["13'",1,"Alexis Zapata","Nahuel Bustos",""]],"s":{"pos":[37.5,62.5],"sh":[5,22],"sot":[3,4],"co":[2,9],"fo":[21,9],"ye":[2,2],"re":[0,0],"sv":[4,1],"off":[1,1],"pa":[188,345],"pt":[287,445]}},
+{"id":"f13","b":"F","c":"ligaf","st":"Fecha 13","d":"2026-05-28T15:30","h":"Llaneros","a":"Santa Fe","hs":1,"as":4,"v":"La Esperanza, Villavicencio","g":[["6'",1,"Ysaura Viso","",""],["14'",1,"Mariana Zamorano","",""],["25'",0,"Andrea Pérez","","og"],["60'",1,"Ysaura Viso","",""],["80'",1,"Ysaura Viso","",""]]},
+{"id":"e401874165","b":"M","c":"suda","st":"Playoff de octavos · ida","d":"2026-07-23T19:30","h":"Santa Fe","a":"Caracas","hs":2,"as":0,"v":"El Campín, Bogotá","g":[["30'",1,"Hugo Rodallega","Nahuel Bustos",""],["84'",1,"Franco Fagúndez","Christian Mafla",""]],"s":{"pos":[56.9,43.1],"sh":[13,10],"sot":[3,1],"co":[6,2],"fo":[10,6],"ye":[0,0],"re":[0,0],"sv":[1,1],"off":[0,3],"pa":[407,302],"pt":[482,366]}},
+{"id":"f14","b":"F","c":"ligaf","st":"Fecha 14","d":"2026-07-26T14:00","h":"Santa Fe","a":"Real Santander","hs":0,"as":1,"v":"Olaya Herrera, Bogotá","g":[["28'",0,"Ángela Acosta","","pen"]]},
+{"id":"e401877957","b":"M","c":"liga2","st":"Todos contra todos","d":"2026-07-26T16:05","h":"Águilas Doradas","a":"Santa Fe","hs":2,"as":1,"v":"Cincuentenario, Medellín","g":[["54'",0,"Andrés Ricaurte","Jhon Meléndez",""],["61'",1,"Nahuel Bustos","","pen"],["85'",0,"Frank Lozano","Andrés Ricaurte",""]],"s":{"pos":[44.1,55.9],"sh":[10,17],"sot":[5,9],"co":[1,2],"fo":[12,10],"ye":[2,4],"re":[0,0],"sv":[7,4],"off":[1,2],"pa":[260,376],"pt":[361,464]}},
+{"id":"e401874162","b":"M","c":"suda","st":"Playoff de octavos · vuelta","d":"2026-07-30T19:30","h":"Caracas","a":"Santa Fe","hs":0,"as":3,"v":"Caracas","g":[["56'",1,"Nahuel Bustos","Jáder Obrian",""],["76'",1,"Hugo Rodallega","",""],["83'",1,"Franco Fagúndez","Alexis Zapata",""]],"s":{"pos":[44,56],"sh":[13,14],"sot":[3,4],"co":[0,8],"fo":[9,11],"ye":[1,1],"re":[0,0],"sv":[4,1],"off":[1,2],"pa":[338,447],"pt":[419,521]},"note":"Santa Fe avanzó 5-0 en el global"},
+{"id":"e401877966","b":"M","c":"liga2","st":"Todos contra todos","d":"2026-08-02T20:00","h":"Santa Fe","a":"Once Caldas","hs":2,"as":2,"v":"El Campín, Bogotá","g":[["4'",1,"Jáder Obrian","Nahuel Bustos",""],["54'",0,"Jefry Zapata","Michael Barrios",""],["63'",1,"Andrés Correa","","og"],["82'",0,"Andrés Colorado","Andrés Correa",""]],"s":{"pos":[39.2,60.8],"sh":[9,22],"sot":[2,9],"co":[3,4],"fo":[4,6],"ye":[2,1],"re":[0,0],"sv":[7,1],"off":[2,3],"pa":[263,466],"pt":[330,523]}},
+{"id":"f15","b":"F","c":"ligaf","st":"Fecha 15","d":"2026-08-04T17:20","h":"Millonarios","a":"Santa Fe","hs":1,"as":0,"v":"El Campín, Bogotá","g":[["90+1'",0,"Lina Gómez","",""]]},
+{"id":"e401871772","b":"M","c":"copa","st":"Fase 1B · ida","d":"2026-08-05T19:00","h":"Santa Fe","a":"Unión Magdalena","hs":2,"as":0,"v":"El Campín, Bogotá","g":[["53'",1,"Franco Fagúndez","",""],["63'",1,"Luis Palacios","",""]]},
+{"id":"e401877846","b":"M","c":"liga2","st":"Todos contra todos","d":"2026-08-08T14:00","h":"Santa Fe","a":"Chicó","hs":2,"as":0,"v":"El Campín, Bogotá","g":[["54'",1,"Hugo Rodallega","Franco Fagúndez",""],["76'",1,"Juan Palma","","og"]],"s":{"pos":[56.9,43.1],"sh":[8,5],"sot":[3,1],"co":[2,0],"fo":[8,17],"ye":[1,1],"re":[0,0],"sv":[1,2],"off":[0,3],"pa":[438,322],"pt":[524,398]}},
+{"id":"e401903232","b":"M","c":"suda","st":"Octavos · ida","d":"2026-08-19T19:30","h":"Santa Fe","a":"River Plate","hs":0,"as":0,"v":"El Campín, Bogotá","g":[],"s":{"pos":[47.8,52.2],"sh":[9,3],"sot":[3,2],"co":[2,2],"fo":[10,16],"ye":[1,3],"re":[0,0],"sv":[2,3],"off":[1,1],"pa":[329,366],"pt":[401,439]}},
+{"id":"f16","b":"F","c":"ligaf","st":"Fecha 16","d":"2026-08-20T15:00","h":"Santa Fe","a":"Fortaleza","hs":4,"as":4,"v":"Olaya Herrera, Bogotá","g":[["1'",1,"M. Cabrera","",""],["14'",0,"K. Puertas","",""],["31'",1,"M. Baldallo","",""],["51'",1,"Ysaura Viso","",""],["52'",1,"J. Ortegón","",""],["60'",0,"V. Santana","",""],["75'",0,"S. Torres","",""],["89'",0,"V. Valencia","","og"]]},
+{"id":"e401877964","b":"M","c":"liga2","st":"Todos contra todos","d":"2026-08-22T18:10","h":"Santa Fe","a":"América","hs":0,"as":0,"v":"El Campín, Bogotá","g":[],"s":{"pos":[45,55],"sh":[18,4],"sot":[4,0],"co":[8,2],"fo":[10,9],"ye":[1,3],"re":[0,0],"sv":[0,4],"off":[0,0],"pa":[207,283],"pt":[252,327]}},
+{"id":"f17","b":"F","c":"ligaf","st":"Cuadrangular B · fecha 1","d":"2026-08-25T18:00","h":"Santa Fe","a":"Orsomarso","hs":3,"as":0,"v":"Metropolitano de Techo, Bogotá","g":[["11'",1,"Ysaura Viso","",""],["21'",1,"Izabella Cortés","",""],["78'",1,"F. Graterol","",""]]},
+{"id":"e401903295","b":"M","c":"suda","st":"Octavos · vuelta","d":"2026-08-26T19:30","h":"River Plate","a":"Santa Fe","hs":1,"as":1,"v":"Más Monumental, Buenos Aires","g":[["52'",0,"Sebastián Driussi","Gonzalo Montiel",""],["80'",1,"Franco Fagúndez","","pen"]],"s":{"pos":[27.6,72.4],"sh":[12,31],"sot":[4,11],"co":[2,6],"fo":[10,15],"ye":[1,2],"re":[0,0],"sv":[8,3],"off":[2,1],"pa":[137,499],"pt":[226,584]},"pen":[7,8],"note":"Global 1-1; Santa Fe eliminó a River 8-7 en penales"},
+{"id":"f18","b":"F","c":"ligaf","st":"Cuadrangular B · fecha 2","d":"2026-08-29T17:00","h":"Cali","a":"Santa Fe","hs":3,"as":0,"v":"Estadio Deportivo Cali, Palmira","g":[["24'",0,"Ingrid Guerra","",""],["33'",0,"V. Cárdenas","",""],["72'",0,"Karla Viancha","",""]]},
+{"id":"e401877963","b":"M","c":"liga2","st":"Todos contra todos","d":"2026-08-29T18:30","h":"Junior","a":"Santa Fe","hs":1,"as":1,"v":"Romelio Martínez, Barranquilla","g":[["66'",0,"Luis Muriel","Guillermo Paiva",""],["88'",1,"Franco Fagúndez","Maximiliano Lovera",""]],"s":{"pos":[43.1,56.9],"sh":[14,19],"sot":[4,4],"co":[5,6],"fo":[13,15],"ye":[2,2],"re":[0,0],"sv":[3,3],"off":[1,1],"pa":[247,351],"pt":[326,425]}},
+{"id":"f19","b":"F","c":"ligaf","st":"Cuadrangular B · fecha 3","d":"2026-09-02T17:30","h":"Santa Fe","a":"América","hs":1,"as":1,"v":"El Campín, Bogotá","g":[["36'",0,"Génesis Flórez","",""],["45'",1,"Mariana Zamorano","",""]]},
+{"id":"e401877839","b":"M","c":"liga2","st":"Todos contra todos","d":"2026-09-02T20:25","h":"Santa Fe","a":"Millonarios","hs":3,"as":2,"v":"El Campín, Bogotá","g":[["6'",0,"Daniel Ruiz","Leonardo Castro",""],["45+2'",1,"Johan Torres","",""],["50'",1,"Franco Fagúndez","",""],["71'",1,"Emerson Rodríguez","Daniel Torres",""],["73'",0,"Andrey Estupiñán","",""]],"r":[["86'",1,"Helibelton Palacios"]],"s":{"pos":[45.9,54.1],"sh":[12,20],"sot":[6,9],"co":[7,8],"fo":[10,13],"ye":[1,5],"re":[1,0],"sv":[7,3],"off":[2,3],"pa":[238,294],"pt":[313,364]}},
+{"id":"f20","b":"F","c":"ligaf","st":"Cuadrangular B · fecha 4","d":"2026-09-05T15:30","h":"América","a":"Santa Fe","hs":0,"as":1,"v":"Pascual Guerrero, Cali","g":[["67'",1,"Ysaura Viso","",""]]},
+{"id":"e401877843","b":"M","c":"liga2","st":"Todos contra todos","d":"2026-09-05T18:25","h":"Santa Fe","a":"Fortaleza","hs":2,"as":2,"v":"El Campín, Bogotá","g":[["17'",1,"Franco Fagúndez","",""],["23'",1,"Nahuel Bustos","",""],["77'",0,"Nahuel Bustos","","og"],["90+1'",0,"Jordan García","Franco Pulicastro",""]],"s":{"pos":[49.5,50.5],"sh":[16,18],"sot":[7,5],"co":[4,3],"fo":[11,8],"ye":[1,3],"re":[0,0],"sv":[4,5],"off":[0,1],"pa":[337,344],"pt":[405,406]}},
+{"id":"e401913960","b":"M","c":"suda","st":"Cuartos · ida","d":"2026-09-08T17:00","h":"Santa Fe","a":"Vasco da Gama","hs":0,"as":0,"v":"El Campín, Bogotá","g":[],"s":{"pos":[57,43],"sh":[15,15],"sot":[2,4],"co":[5,5],"fo":[8,5],"ye":[3,4],"re":[0,0],"sv":[4,2],"off":[1,0],"pa":[364,264],"pt":[450,334]}},
+{"id":"f21","b":"F","c":"ligaf","st":"Cuadrangular B · fecha 5","d":"2026-09-09T15:00","h":"Santa Fe","a":"Cali","hs":0,"as":0,"v":"Metropolitano de Techo, Bogotá","g":[]},
+{"id":"e401877962","b":"M","c":"liga2","st":"Todos contra todos","d":"2026-09-11T20:30","h":"Santa Fe","a":"Tolima","hs":1,"as":0,"v":"El Campín, Bogotá","g":[["61'",1,"Nahuel Bustos","Alexis Zapata",""]],"s":{"pos":[44.2,55.8],"sh":[13,9],"sot":[4,2],"co":[5,5],"fo":[11,9],"ye":[3,2],"re":[0,0],"sv":[2,3],"off":[3,1],"pa":[337,446],"pt":[405,513]}},
+{"id":"f22","b":"F","c":"ligaf","st":"Cuadrangular B · fecha 6","d":"2026-09-12T15:30","h":"Orsomarso","a":"Santa Fe","hs":1,"as":2,"v":"Raúl Miranda, Yumbo","g":[["41'",1,"N. Orozco","",""],["88'",0,"M. Aguilar","",""],["90+2'",1,"C. Motta","","pen"]]},
+{"id":"e401913959","b":"M","c":"suda","st":"Cuartos · vuelta","d":"2026-09-15T17:00","h":"Vasco da Gama","a":"Santa Fe","hs":2,"as":0,"v":"São Januário, Río de Janeiro","g":[["37'",0,"Bruno Duarte","Alan Saldivia",""],["65'",0,"David","José Luis Rodríguez",""]],"s":{"pos":[48.2,51.8],"sh":[8,11],"sot":[3,4],"co":[5,3],"fo":[7,10],"ye":[1,0],"re":[0,0],"sv":[2,3],"off":[0,4],"pa":[319,366],"pt":[426,453]},"note":"Vasco avanzó 2-0 en el global"},
+{"id":"f23","b":"F","c":"ligaf","st":"Semifinal · ida","d":"2026-09-17T19:00","h":"Santa Fe","a":"Millonarios","hs":2,"as":2,"v":"El Campín, Bogotá","g":[["12'",1,"Hernández","",""],["17'",0,"Kelly Restrepo","",""],["21'",0,"Lina Gómez","",""],["33'",1,"Andrea Pérez","",""]],"att":2294},
+{"id":"e401877842","b":"M","c":"liga2","st":"Todos contra todos","d":"2026-09-19T16:05","h":"Alianza","a":"Santa Fe","hs":1,"as":4,"v":"Armando Maestre Pavajeau, Valledupar","g":[["29'",1,"Alexis Zapata","",""],["32'",1,"Nahuel Bustos","Jeison Angulo",""],["47'",0,"Cristian Vergara","",""],["75'",1,"Nahuel Bustos","","pen"],["90+3'",1,"Hugo Rodallega","Maximiliano Lovera",""]],"s":{"pos":[50.2,49.8],"sh":[9,16],"sot":[7,2],"co":[6,6],"fo":[7,4],"ye":[2,3],"re":[0,0],"sv":[1,3],"off":[1,0],"pa":[357,350],"pt":[436,419]}},
+{"id":"f24","b":"F","c":"ligaf","st":"Semifinal · vuelta","d":"2026-09-20T18:30","h":"Millonarios","a":"Santa Fe","hs":1,"as":2,"v":"El Campín, Bogotá","g":[["36'",1,"D. Garavito","",""],["58'",0,"Sánchez","",""],["61'",1,"Mariana Zamorano","",""]],"att":9000,"note":"Santa Fe avanzó 4-3 en el global"},
+{"id":"e401877961","b":"M","c":"liga2","st":"Todos contra todos","d":"2026-09-22T20:00","h":"Santa Fe","a":"Cali","hs":0,"as":1,"v":"El Campín, Bogotá","g":[["38'",0,"Eduard Bello","Johan Martínez",""]],"r":[["87'",1,"Daniel Torres"]],"s":{"pos":[55,45],"sh":[19,9],"sot":[5,4],"co":[9,3],"fo":[11,9],"ye":[2,2],"re":[1,0],"sv":[3,5],"off":[1,0],"pa":[405,334],"pt":[470,395]}},
+{"id":"f25","b":"F","c":"ligaf","st":"Final · ida","d":"2026-09-23T19:00","h":"Santa Fe","a":"Cali","hs":2,"as":3,"v":"La Independencia, Tunja","g":[["13'",0,"Bermeo","",""],["18'",0,"Ingrid Guerra","",""],["25'",0,"Melanin Aponzá","",""],["32'",1,"Mariana Zamorano","","pen"],["41'",1,"Mariana Zamorano","",""]],"att":10322},
+{"id":"e401871780","b":"M","c":"copa","st":"Fase 1B · vuelta","d":"2026-09-25T18:00","h":"Unión Magdalena","a":"Santa Fe","hs":1,"as":1,"v":"Sierra Nevada, Santa Marta","g":[["10'",0,"Freddy Molina","",""],["52'",1,"Cristhian Portocarrero","",""]],"note":"Santa Fe avanzó 3-1 en el global"},
+{"id":"f26","b":"F","c":"ligaf","st":"Final · vuelta","d":"2026-09-26T18:00","h":"Cali","a":"Santa Fe","hs":4,"as":2,"v":"Estadio Deportivo Cali, Palmira","g":[["15'",1,"Mariana Zamorano","",""],["20'",0,"Melanin Aponzá","",""],["42'",0,"Ingrid Guerra","",""],["56'",0,"Izabella Cortés","","og"],["62'",1,"Mariana Zamorano","",""],["90+3'",0,"Ingrid Guerra","",""]],"att":18200,"note":"Cali campeón 7-4 en el global; Santa Fe subcampeón"},
+{"id":"e401877965","b":"M","c":"liga2","st":"Todos contra todos","d":"2026-09-29T15:30","h":"Pereira","a":"Santa Fe","hs":1,"as":2,"v":"Santiago de las Atalayas, Yopal","g":[["5'",1,"Nahuel Bustos","",""],["45+5'",0,"Marco Pérez","","pen"],["60'",1,"Nahuel Bustos","Helibelton Palacios",""]],"r":[["64'",1,"Luis Palacios"],["78'",0,"Carlos Cruz"]],"s":{"pos":[35.2,64.8],"sh":[9,10],"sot":[6,4],"co":[2,7],"fo":[15,13],"ye":[4,4],"re":[1,1],"sv":[3,4],"off":[0,4],"pa":[193,404],"pt":[268,471]}},
+{"id":"e401877960","b":"M","c":"liga2","st":"Todos contra todos","d":"2026-10-05T19:00","h":"Medellín","a":"Santa Fe","hs":0,"as":1,"v":"Metropolitano de Itagüí","g":[["87'",1,"Víctor Moreno","Maximiliano Lovera",""]],"s":{"pos":[40.1,59.9],"sh":[16,20],"sot":[6,6],"co":[5,7],"fo":[13,11],"ye":[4,5],"re":[0,0],"sv":[6,4],"off":[1,3],"pa":[241,383],"pt":[297,439]}},
+{"id":"e401913098","b":"M","c":"copa","st":"Octavos de final","d":"2026-10-11T14:00","h":"Santa Fe","a":"Fortaleza","hs":2,"as":2,"v":"Municipal de Mosquera","g":[["19'",1,"Hugo Rodallega","",""],["42'",0,"Teun Wilke","",""],["48'",1,"Luis Palacios","",""],["57'",0,"Juan Sebastián Herrera","",""]],"pen":[9,8],"note":"Partido único; Santa Fe ganó 9-8 en penales"},
+{"id":"f27","b":"F","c":"liberf","st":"Grupo A · fecha 1","d":"2026-10-16T22:00","h":"Caracas","a":"Santa Fe","hs":2,"as":3,"v":"Rodrigo Paz Delgado, Quito","g":[["25'",0,"E. Mota","",""],["44'",1,"Katherine Valbuena","",""],["45+9'",1,"Mariana Zamorano","",""],["47'",0,"F. Solórzano","",""],["90+2'",1,"Andrea Pérez","",""]]},
+{"id":"f28","b":"F","c":"liberf","st":"Grupo A · fecha 2","d":"2026-10-18","h":"Santa Fe","a":"Colo-Colo","hs":2,"as":1,"v":"Rodrigo Paz Delgado, Quito","g":[["51'",0,"Anaís Cifuentes","",""],["63'",1,"Mariana Zamorano","",""],["90+2'",1,"Mariana Zamorano","",""]]},
+{"id":"e401877840","b":"M","c":"liga2","st":"Todos contra todos","d":"2026-10-18T18:05","h":"Llaneros","a":"Santa Fe","hs":1,"as":0,"v":"Bello Horizonte, Villavicencio","g":[["71'",0,"Carlos Cortés","",""]],"s":{"pos":[47.7,52.3],"sh":[13,16],"sot":[4,10],"co":[3,7],"fo":[10,10],"ye":[2,3],"re":[0,0],"sv":[9,5],"off":[2,2],"pa":[334,377],"pt":[409,453]}},
+{"id":"f29","b":"F","c":"liberf","st":"Grupo A · fecha 3","d":"2026-10-21T19:00","h":"Santa Fe","a":"Corinthians","hs":1,"as":5,"v":"Banco Guayaquil, Quito","g":[["4'",1,"Kelly Ibargüen","",""],["6'",0,"Duda Sampaio","",""],["44'",0,"Vic Albuquerque","",""],["49'",0,"Belén Aquino","",""],["60'",0,"Belén Aquino","",""],["84'",0,"Gisela Robledo","",""]],"note":"Santa Fe avanzó a cuartos como 2.º del Grupo A"},
+{"id":"e401877844","b":"M","c":"liga2","st":"Todos contra todos","d":"2026-10-21T20:20","h":"Santa Fe","a":"Jaguares","hs":2,"as":1,"v":"El Campín, Bogotá","g":[["5'",1,"Franco Fagúndez","Hugo Rodallega",""],["81'",1,"Franco Fagúndez","",""],["90+2'",0,"Andrés Rentería","Cristian Álvarez",""]],"s":{"pos":[49.5,50.5],"sh":[17,16],"sot":[6,2],"co":[5,4],"fo":[11,14],"ye":[2,1],"re":[0,0],"sv":[1,4],"off":[2,0],"pa":[304,311],"pt":[369,372]}}
+],
+"upcoming":[
+{"id":"e401877841","b":"M","c":"liga2","st":"Todos contra todos","d":"2026-10-26T20:05","h":"Santa Fe","a":"Bucaramanga","v":"El Campín, Bogotá"},
+{"id":"e401877845","b":"M","c":"liga2","st":"Todos contra todos","d":"2026-10-29T20:30","h":"Nacional","a":"Santa Fe","v":"Atanasio Girardot, Medellín"},
+{"id":"e401877959","b":"M","c":"liga2","st":"Todos contra todos","d":"2026-11-02T18:10","h":"Cúcuta","a":"Santa Fe","v":"General Santander, Cúcuta"},
+{"id":"e401877838","b":"M","c":"liga2","st":"Todos contra todos","d":"2026-11-08T15:30","h":"Inter Bogotá","a":"Santa Fe","v":"Metropolitano de Techo, Bogotá"},
+{"id":"e401877958","b":"M","c":"liga2","st":"Todos contra todos","d":"2026-11-09T19:30","h":"Santa Fe","a":"Pasto","v":"El Campín, Bogotá"},
+{"id":"u-copa-qf","b":"M","c":"copa","st":"Cuartos de final","d":null,"h":"Santa Fe","a":"Once Caldas","v":"Por definir","note":"Partido único; Dimayor no ha fijado fecha ni sede"},
+{"id":"u-liberf-qf","b":"F","c":"liberf","st":"Cuartos de final","d":"2026-10-24","h":"Palmeiras","a":"Santa Fe","v":"Quito, Ecuador","note":"Partido único. Conmebol aún no confirma la hora."}
+],
+"tables":[
+{"id":"t-liga2","c":"liga2","b":"M","n":"Liga BetPlay 2026-II · fase todos contra todos","note":"Clasifican los 8 primeros a cuartos de final. Hay partidos aplazados por el terremoto, por eso no todos tienen los mismos PJ.","q":8,"rows":[["Nacional",14,9,2,3,28,12,29],["Cali",15,8,5,2,23,9,29],["América",14,8,4,2,26,10,28],["Millonarios",16,6,8,2,24,14,26],["Bucaramanga",13,6,7,0,22,12,25],["Santa Fe",14,7,4,3,21,14,25],["Medellín",14,7,2,5,21,19,23],["Cúcuta",14,6,3,5,17,19,21],["Once Caldas",15,5,5,5,19,17,20],["Tolima",15,5,5,5,18,18,20],["Águilas Doradas",14,4,7,3,19,19,19],["Inter Bogotá",15,3,8,4,18,21,17],["Llaneros",15,5,2,8,16,20,17],["Alianza",14,4,3,7,15,26,15],["Pereira",14,2,7,5,10,18,13],["Junior",14,2,6,6,19,23,12],["Chicó",14,3,3,8,11,25,12],["Fortaleza",14,1,8,5,15,21,11],["Jaguares",14,2,4,8,16,28,10],["Pasto",14,2,3,9,9,22,9]]},
+{"id":"t-liber","c":"liber","b":"M","n":"Copa Libertadores 2026 · Grupo E","note":"Los dos primeros pasan a octavos; el tercero va al playoff de la Sudamericana.","q":2,"rows":[["Corinthians",6,3,2,1,8,4,11],["Platense",6,3,1,2,8,7,10],["Santa Fe",6,2,2,2,6,7,8],["Peñarol",6,0,3,3,4,8,3]]},
+{"id":"t-ligaf","c":"ligaf","b":"F","n":"Liga Femenina 2026 · fase todos contra todos","note":"Clasificaron las 8 primeras a los cuadrangulares.","q":8,"rows":[["Nacional",16,13,0,3,34,9,39],["Cali",16,12,2,2,33,10,38],["Millonarios",16,10,5,1,32,8,35],["América",16,11,2,3,29,8,35],["Inter Bogotá",16,9,2,5,22,14,29],["Santa Fe",16,7,5,4,27,15,26],["Inter Palmira",16,7,5,4,15,17,26],["Orsomarso",16,5,7,4,18,14,22],["Medellín",16,6,1,9,21,22,19],["Fortaleza",16,4,5,7,14,23,17],["Bucaramanga",16,5,2,9,15,34,17],["Llaneros",16,3,4,9,11,33,13],["Junior",16,2,6,8,12,24,12],["Real Santander",16,1,7,8,4,22,10],["Once Caldas",16,1,5,10,7,25,8],["Pasto",16,1,4,11,12,28,7]]},
+{"id":"t-ligaf-b","c":"ligaf","b":"F","n":"Liga Femenina 2026 · Cuadrangular B","note":"Cali pasó primera por ventaja deportiva (mejor ubicada en la fase anterior).","q":2,"rows":[["Cali",6,3,2,1,6,2,11],["Santa Fe",6,3,2,1,7,5,11],["América",6,3,1,2,8,5,10],["Orsomarso",6,0,1,5,2,11,1]]},
+{"id":"t-liberf","c":"liberf","b":"F","n":"Libertadores Femenina 2026 · Grupo A","note":"Los dos primeros pasan a cuartos de final. Jugado en Quito.","q":2,"rows":[["Corinthians",3,3,0,0,14,1,9],["Santa Fe",3,2,0,1,6,8,6],["Colo-Colo",3,1,0,2,4,4,3],["Caracas",3,0,0,3,2,13,0]]}
+],
+"sources":["ESPN (resultados, goles y estadísticas del equipo masculino)","Dimayor y Wikipedia (Liga Femenina 2026)","Win Sports (goles de la Liga Femenina y Libertadores Femenina)","CONMEBOL, La FM, Infobae, El Espectador y Radio Nacional"]
+}
+</script>
+<script>
+(function () {
+  "use strict";
+  var DATA = JSON.parse(document.getElementById("sf-data").textContent);
+  var SF = "Santa Fe";
+  var CREST = "data:image/png;base64,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";
+  function mark(name) {
+    if (name === SF) return '<img class="crest" src="' + CREST + '" alt="" aria-hidden="true">';
+    return '<span class="badge" aria-hidden="true">' + esc(initials(name)) + '</span>';
+  }
+  var C = DATA.competitions;
+  var ORDER = Object.keys(C);
+  var DOW = ["dom", "lun", "mar", "mié", "jue", "vie", "sáb"];
+  var MON = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic"];
+  var MONL = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+  var TITLES = { partidos: "Partidos", posiciones: "Posiciones", estadisticas: "Estadísticas" };
+  var KNAMES = { liga: "Liga", copa: "Copa", int: "Libertadores y Sudamericana" };
+
+  var state = { tab: "partidos", b: "M", k: "all", sub: null };
+  try { var saved = JSON.parse(localStorage.getItem("sf26") || "{}"); if (saved.b === "M" || saved.b === "F") state.b = saved.b; if (saved.k) state.k = saved.k; if (/^(pasados|hoy|proximos)$/.test(saved.sub || "")) state.sub = saved.sub; } catch (e) {}
+  var h0 = (location.hash || "").replace("#", "");
+  if (TITLES[h0]) state.tab = h0;
+
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function $(id) { return document.getElementById(id); }
+  function isHome(m) { return m.h === SF; }
+  function opp(m) { return isHome(m) ? m.a : m.h; }
+  function sc(m) { return isHome(m) ? { f: m.hs, a: m.as } : { f: m.as, a: m.hs }; }
+  function res(m) { var s = sc(m); return s.f > s.a ? "G" : s.f < s.a ? "P" : "E"; }
+  function resWord(r) { return { G: "Ganado", E: "Empatado", P: "Perdido" }[r]; }
+  function surname(n) { var p = String(n).trim().split(/\s+/); return p.length > 1 ? p[p.length - 1] : p[0]; }
+  function initials(n) {
+    if (n === SF) return "SF";
+    if (/Grupo/.test(n)) return "?";
+    var w = String(n).normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^A-Za-z0-9 \-]/g, " ").split(/[\s\-]+/).filter(function (x) { return x && !/^(de|da|del|la)$/i.test(x); });
+    if (!w.length) return "?";
+    if (w.length === 1) return w[0].slice(0, 3).toUpperCase();
+    return (w[0][0] + w[1][0]).toUpperCase();
+  }
+  function pd(s) {
+    var parts = String(s).split("T"), d = parts[0].split("-").map(Number);
+    return { y: d[0], mo: d[1], da: d[2], t: parts[1] || null, dow: new Date(Date.UTC(d[0], d[1] - 1, d[2])).getUTCDay() };
+  }
+  function fmtDate(s, withTime) {
+    if (!s) return "Fecha por definir";
+    var p = pd(s);
+    return DOW[p.dow] + " " + p.da + " " + MON[p.mo - 1] + (withTime !== false && p.t ? " · " + p.t : "");
+  }
+  function todayCO() { var d = new Date(Date.now() - 5 * 3600 * 1000); return d.toISOString().slice(0, 10); }
+  function daysUntil(s) { var a = Date.parse(s.slice(0, 10) + "T00:00:00Z"), b = Date.parse(todayCO() + "T00:00:00Z"); return Math.round((a - b) / 86400000); }
+  function inFilter(m) { return (state.b === "all" || m.b === state.b) && (state.k === "all" || C[m.c].k === state.k); }
+  function played() { return DATA.matches.filter(inFilter); }
+  function compLabel(m) { return C[m.c].n; }
+  function chev() { return '<svg class="chev" viewBox="0 0 8 13" aria-hidden="true"><path d="M1.5 1.5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>'; }
+  function penTxt(m) {
+    if (!m.pen) return "";
+    var win = m.pen[0] > m.pen[1] ? m.h : m.a;
+    return "Penales: " + esc(win) + " " + Math.max(m.pen[0], m.pen[1]) + "-" + Math.min(m.pen[0], m.pen[1]);
+  }
+  function scorerLine(m, side) {
+    var by = {}, order = [];
+    m.g.forEach(function (g) {
+      if (g[1] !== side) return;
+      var key = surname(g[2]) + (g[4] === "og" ? " (a.g.)" : "");
+      if (!by[key]) { by[key] = []; order.push(key); }
+      by[key].push(g[0] + (g[4] === "pen" ? " pen." : ""));
+    });
+    return order.map(function (k) { return esc(k) + " " + by[k].join(", "); }).join(" · ");
+  }
+
+  function teamRow(name, goals, win) {
+    return '<div class="trow"><span class="badge' + (name === SF ? " sf" : "") + '" aria-hidden="true">' + esc(initials(name)) + '</span>' +
+      '<span class="tn' + (win ? " w" : "") + '">' + esc(name) + '</span>' +
+      (goals == null ? "" : '<span class="sc' + (win ? " w" : "") + '">' + goals + '</span>') + '</div>';
+  }
+
+  function scorerList(m, side) {
+    var by = {}, order = [];
+    m.g.forEach(function (g) {
+      if (g[1] !== side) return;
+      var key = surname(g[2]) + (g[4] === "og" ? " (a.g.)" : "");
+      if (!by[key]) { by[key] = []; order.push(key); }
+      by[key].push(g[0] + (g[4] === "pen" ? " pen." : ""));
+    });
+    return order.map(function (k) { return '<div>' + esc(k) + ' ' + esc(by[k].join(", ")) + '</div>'; }).join("");
+  }
+  function sTeam(name) {
+    return '<div class="s-team lg">' + mark(name) + '<span class="s-tn">' + esc(name) + '</span></div>';
+  }
+  function stageTxt(x) { return x.st === "Todos contra todos" ? "" : " · " + x.st; }
+  function shortDate(s) { var p = pd(s); return DOW[p.dow] + " " + p.da + " " + MON[p.mo - 1]; }
+
+  function matchRow(m) {
+    var r = res(m), home = isHome(m);
+    var hw = m.hs > m.as || (m.pen && m.pen[0] > m.pen[1]), aw = m.as > m.hs || (m.pen && m.pen[1] > m.pen[0]);
+    var gl = scorerList(m, home ? 1 : 0), gr = scorerList(m, home ? 0 : 1);
+    var pen = m.pen ? '<small>Pen. ' + m.pen[0] + '-' + m.pen[1] + '</small>' : "";
+    return '<button class="srow" data-id="' + esc(m.id) + '" aria-label="' + esc(m.h + " " + m.hs + ", " + m.a + " " + m.as + ". " + resWord(r) + ". Ver detalle") + '">' +
+      '<div class="s-comp">' + esc(C[m.c].n + stageTxt(m)) + ' · ' + esc(shortDate(m.d)) + '</div>' +
+      '<div class="s-main">' + sTeam(m.h) +
+      '<span class="s-sc' + (aw ? " l" : "") + '">' + m.hs + '</span>' +
+      '<div class="s-mid"><span>Final</span>' + pen + '<span class="res ' + r + '" title="' + resWord(r) + '">' + r + '</span></div>' +
+      '<span class="s-sc' + (hw ? " l" : "") + '">' + m.as + '</span>' +
+      sTeam(m.a) + '</div>' +
+      ((gl || gr) ? '<div class="s-goals"><div class="gl ' + (home ? "sf" : "op") + '">' + gl + '</div><div class="gr ' + (home ? "op" : "sf") + '">' + gr + '</div></div>' : "") +
+      '</button>';
+  }
+
+  function upRow(u, today, pending) {
+    var p = pd(u.d), isToday = u.d.slice(0, 10) === today;
+    var top = pending ? shortDate(u.d) : isToday ? "Hoy" : shortDate(u.d);
+    var bottom = pending ? "Resultado pendiente" : (p.t || "Hora por definir");
+    return '<div class="srow up" role="group" aria-label="' + esc(u.h + " contra " + u.a + ", " + top + " " + bottom) + '">' +
+      '<div class="s-comp">' + esc(C[u.c].n + stageTxt(u)) + '</div>' +
+      '<div class="s-main up">' + sTeam(u.h) +
+      '<div class="s-mid up"><span>' + esc(top) + '</span><small>' + esc(bottom) + '</small></div>' +
+      sTeam(u.a) + '</div>' +
+      '<div class="s-venue">' + esc(u.v) + (u.note ? '<br>' + esc(u.note) : "") + '</div></div>';
+  }
+
+  function byMonth(list) {
+    var groups = {}, keys = [];
+    list.forEach(function (m) { var k = m.d.slice(0, 7); if (!groups[k]) { groups[k] = []; keys.push(k); } groups[k].push(m); });
+    return keys.map(function (k) { var p = k.split("-"); return { label: MONL[Number(p[1]) - 1] + " " + p[0], items: groups[k] }; });
+  }
+  function desc(x, y) { return x.d < y.d ? 1 : -1; }
+  function asc(x, y) { return x.d < y.d ? -1 : 1; }
+
+  function renderPartidos() {
+    var el = $("v-partidos"), today = todayCO(), body = "";
+    var past = played().slice().sort(desc);
+    var ups = DATA.upcoming.filter(inFilter);
+    var dated = ups.filter(function (u) { return !!u.d; });
+    var pending = dated.filter(function (u) { return u.d.slice(0, 10) < today; }).sort(desc);
+    var future = dated.filter(function (u) { return u.d.slice(0, 10) >= today; }).sort(asc);
+    var undated = ups.filter(function (u) { return !u.d; });
+
+    if (state.sub === "pasados") {
+      if (pending.length) body += '<div class="mhead">Por actualizar</div>' + pending.map(function (u) { return upRow(u, today, true); }).join("");
+      if (!past.length && !pending.length) body += '<div class="s-empty">No hay partidos jugados con estos filtros.</div>';
+      byMonth(past).forEach(function (g) {
+        var w = g.items.filter(function (m) { return res(m) === "G"; }).length;
+        body += '<div class="mhead">' + g.label + '<span>' + g.items.length + (g.items.length === 1 ? " partido" : " partidos") + ' · ' + w + (w === 1 ? " ganado" : " ganados") + '</span></div>' + g.items.map(matchRow).join("");
+      });
+    } else if (state.sub === "hoy") {
+      var tp = past.filter(function (m) { return m.d.slice(0, 10) === today; });
+      var tu = future.filter(function (u) { return u.d.slice(0, 10) === today; });
+      if (tp.length || tu.length) {
+        body += '<div class="mhead">' + esc(shortDate(today)) + '</div>' + tp.map(matchRow).join("") + tu.map(function (u) { return upRow(u, today); }).join("");
+      } else {
+        body += '<div class="s-empty">Santa Fe' + (state.b === "F" ? " femenino" : "") + ' no juega hoy.</div>';
+        if (future.length) body += '<div class="mhead">Próximo partido</div>' + upRow(future[0], today);
+      }
+    } else {
+      if (!future.length) body += '<div class="s-empty">No hay partidos con fecha definida.</div>';
+      byMonth(future).forEach(function (g) {
+        body += '<div class="mhead">' + g.label + '<span>' + g.items.length + (g.items.length === 1 ? " partido" : " partidos") + '</span></div>' + g.items.map(function (u) { return upRow(u, today); }).join("");
+      });
+      if (undated.length) body += '<div class="s-note">Sin fecha todavía: ' + undated.map(function (u) { return esc(C[u.c].n + stageTxt(u)) + ' contra ' + esc(u.h === SF ? u.a : u.h); }).join(" · ") + '.</div>';
+    }
+    $("subseg").innerHTML = [["pasados", "Pasados"], ["hoy", "Hoy"], ["proximos", "Próximos"]].map(function (t) {
+      return '<button role="tab" id="sub-' + t[0] + '" data-sub="' + t[0] + '" aria-selected="' + (state.sub === t[0]) + '">' + t[1] + '</button>';
+    }).join("");
+    el.innerHTML = '<div class="card sb"><div class="sbody">' + body + '</div></div>' + footer();
+  }
+
+  function seasonStrip() {
+    var comps = ORDER.filter(function (k) { return (state.b === "all" || C[k].b === state.b) && (state.k === "all" || C[k].k === state.k); });
+    if (!comps.length) return "";
+    return '<section class="sec"><p class="cap">Temporada en resumen</p><div class="strip">' + comps.map(function (k) {
+      var c = C[k];
+      return '<div class="pill-card' + (c.champ ? " champ" : "") + '"><span class="pc-b">' + ({ liga: "Liga", copa: "Copa", int: "Internacional" })[c.k] + '</span><span class="pc-n">' + esc(c.n) + '</span><span class="pc-r">' + esc(c.res) + '</span></div>';
+    }).join("") + '</div></section>';
+  }
+
+  /* ---------- Posiciones ---------- */
+  function tieKey(st) { return st.split(" · ")[0]; }
+  function isKO(m) { return !/^(Todos contra todos|Fecha \d|Grupo |Cuadrangular )/.test(m.st); }
+  function ties(cKey) {
+    var ms = DATA.matches.filter(function (m) { return m.c === cKey && isKO(m); }).sort(function (x, y) { return x.d < y.d ? -1 : 1; });
+    var map = {}, list = [];
+    ms.forEach(function (m) { var k = tieKey(m.st); if (!map[k]) { map[k] = { name: k, legs: [] }; list.push(map[k]); } map[k].legs.push(m); });
+    list.forEach(function (t) {
+      var f = 0, a = 0; t.legs.forEach(function (m) { var s = sc(m); f += s.f; a += s.a; });
+      t.f = f; t.a = a; t.opp = opp(t.legs[0]);
+      var last = t.legs[t.legs.length - 1];
+      if (f !== a) t.won = f > a;
+      else if (last.pen) { var sfp = isHome(last) ? last.pen[0] : last.pen[1], op = isHome(last) ? last.pen[1] : last.pen[0]; t.won = sfp > op; t.penTxt = sfp + "-" + op + " pen."; }
+      else t.won = null;
+      t.isFinal = /^Final/.test(t.name);
+    });
+    return list;
+  }
+  function tieRow(t) {
+    var out = t.won == null ? '<span class="out wait">Sin definir</span>' : t.isFinal ? (t.won ? '<span class="out champ">Campeón</span>' : '<span class="out ko">Subcampeón</span>') : (t.won ? '<span class="out ok">Avanzó</span>' : '<span class="out el">Eliminado</span>');
+    var legs = t.legs.map(function (m) { var s = sc(m); return (isHome(m) ? "L " : "V ") + s.f + "-" + s.a; }).join(" · ");
+    return '<button class="row-i" data-id="' + esc(t.legs[t.legs.length - 1].id) + '"><div><div class="t">' + esc(t.name) + ' · ' + esc(t.opp) + '</div><div class="sub num">' +
+      (t.legs.length > 1 ? "Global " + t.f + "-" + t.a + " (" + legs + ")" : "Resultado " + t.f + "-" + t.a) + (t.penTxt ? " · " + t.penTxt : "") + '</div></div>' + out + '</button>';
+  }
+  function pendingRow(u) {
+    return '<div class="row-i"><div><div class="t">' + esc(u.st) + ' · ' + esc(u.h === SF ? u.a : u.h) + '</div><div class="sub">' + esc(u.d ? fmtDate(u.d) : "Fecha por definir") + '</div></div><span class="out wait">Por jugar</span></div>';
+  }
+  var CUT = { "t-liga2": "a cuartos", "t-liga1": "a cuartos", "t-liber": "a octavos", "t-ligaf": "a cuadrangulares", "t-ligaf-b": "a semifinales", "t-liberf": "a cuartos" };
+  function ptsTxt(x) { return x + (x === 1 ? " punto" : " pts"); }
+  function summaryHTML(t) {
+    var i = -1; t.rows.forEach(function (r, k) { if (r[0] === SF) i = k; });
+    if (i < 0) return "";
+    var r = t.rows[i], lead = t.rows[0];
+    var remaining = DATA.upcoming.filter(function (u) { return u.c === t.c && !isKO(u); }).length, live = remaining > 0;
+    var f = [];
+    if (i === 0) { var sec = t.rows[1]; f.push(live ? "Líder, " + ptsTxt(r[7] - sec[7]) + " sobre el 2.º" : "Terminó líder"); }
+    else { var dl = lead[7] - r[7]; f.push(dl === 0 ? "Igualado en puntos con el líder (" + lead[0] + ")" : "A " + ptsTxt(dl) + " del líder (" + lead[0] + ")"); }
+    if (t.q) {
+      if (i < t.q) {
+        var nx = t.rows[t.q];
+        if (live && nx) { var dn = r[7] - nx[7]; f.push(dn === 0 ? "Igualado con el " + (t.q + 1) + ".º (" + nx[0] + ")" : ptsTxt(dn) + " sobre el " + (t.q + 1) + ".º (" + nx[0] + ")"); }
+        else if (!live) f.push("Clasificó " + (CUT[t.id] || ""));
+      } else {
+        var lq = t.rows[t.q - 1];
+        f.push(live ? "A " + ptsTxt(lq[7] - r[7]) + " del " + t.q + ".º (" + lq[0] + ")" : "No clasificó");
+      }
+    }
+    if (live) f.push("Quedan " + remaining + (remaining === 1 ? " partido" : " partidos"));
+    return '<div class="sumcard"><img class="crest" src="' + CREST + '" alt="" aria-hidden="true"><div><div class="sum-big">' + (i + 1) + '<span class="ord">.º</span> <small>de ' + t.rows.length + '</small></div>' +
+      '<div class="sum-t">' + r[7] + ' puntos en ' + r[1] + ' partidos</div><div class="sum-f">' + f.map(function (x) { return '<span>' + esc(x.trim()) + '</span>'; }).join("") + '</div></div></div>';
+  }
+  function tableHTML(t) {
+    var head = '<div class="pt-h" aria-hidden="true"><span>#</span><span>Equipo</span><span>PJ</span><span>PG</span><span>PE</span><span>PP</span><span>DG</span><span>Pts</span></div>';
+    var body = t.rows.map(function (r, i) {
+      var d = r[5] - r[6];
+      var cut = (t.q && i === t.q) ? '<div class="pt-cut"><span>Línea de clasificación ' + esc(CUT[t.id] || "") + '</span></div>' : "";
+      return cut + '<div class="pt-r' + (r[0] === SF ? " sf" : "") + (i < t.q ? " in" : "") + '" aria-label="' + esc((i + 1) + ". " + r[0] + ": " + r[7] + " puntos, " + r[1] + " jugados, " + r[2] + " ganados, " + r[3] + " empatados, " + r[4] + " perdidos, diferencia " + d) + '">' +
+        '<span class="pos">' + (i + 1) + '</span>' + mark(r[0]) + '<span class="nm">' + esc(r[0]) + '</span><span>' + r[1] + '</span><span>' + r[2] + '</span><span>' + r[3] + '</span><span>' + r[4] + '</span><span>' + (d > 0 ? "+" : "") + d + '</span><span class="pts">' + r[7] + '</span></div>';
+    }).join("");
+    var label = t.n.split(" · ").slice(1).join(" · ") || t.n;
+    return '<p class="cap" style="margin-top:4px">' + esc(label) + '</p><div class="card">' + head + body +
+      '<p class="tnote">' + (t.note ? esc(t.note) + " " : "") + 'PJ jugados · PG ganados · PE empatados · PP perdidos · DG diferencia de gol.</p></div>';
+  }
+  function renderPosiciones() {
+    var el = $("v-posiciones"), html = "";
+    var comps = ORDER.filter(function (k) { return (state.b === "all" || C[k].b === state.b) && (state.k === "all" || C[k].k === state.k); });
+    if (!comps.length) html += '<div class="card empty">No hay torneos con estos filtros.</div>';
+    comps.forEach(function (k) {
+      var c = C[k];
+      var tabs = DATA.tables.filter(function (t) { return t.c === k; });
+      var tl = ties(k);
+      var pend = DATA.upcoming.filter(function (u) { return u.c === k && isKO(u); });
+      html += '<section class="sec"><div class="comp-head"><h2>' + esc(c.n) + '</h2><p class="status' + (c.champ ? " champ" : "") + '" style="margin:0">' + (state.b === "all" ? (c.b === "F" ? "Femenino · " : "Masculino · ") : "") + esc(c.res) + '</p></div>';
+      if (tabs.length) html += summaryHTML(tabs[0]);
+      tabs.forEach(function (t) { html += tableHTML(t); });
+      var gm = DATA.matches.filter(function (m) { return m.c === k && !isKO(m); });
+      if (!tabs.length && gm.length) {
+        var w = 0, d = 0, l = 0, f = 0, a = 0; gm.forEach(function (m) { var s = sc(m); f += s.f; a += s.a; var r = res(m); if (r === "G") w++; else if (r === "E") d++; else l++; });
+        html += '<div class="card rows"><div class="row-i"><div><div class="t">Fase de grupos</div><div class="sub num">' + gm.length + ' PJ · ' + w + 'G ' + d + 'E ' + l + 'P · goles ' + f + '-' + a + ' · ' + (w * 3 + d) + ' pts</div></div></div></div>';
+      }
+      if (tl.length || pend.length) html += '<p class="cap" style="margin-top:4px">Recorrido por eliminación</p><div class="card rows">' + tl.map(tieRow).join("") + pend.map(pendingRow).join("") + '</div>';
+      html += '</section>';
+    });
+    html += footer();
+    el.innerHTML = html;
+  }
+
+  /* ---------- Estadísticas ---------- */
+  function minuteNum(s) { var p = String(s).replace("'", "").split("+"); return Number(p[0]); }
+  function bucket(n) { return n <= 15 ? 0 : n <= 30 ? 1 : n <= 45 ? 2 : n <= 60 ? 3 : n <= 75 ? 4 : 5; }
+  function renderEstadisticas() {
+    var el = $("v-estadisticas"), html = seasonStrip();
+    var ms = played().slice().sort(function (x, y) { return x.d < y.d ? -1 : 1; });
+    if (!ms.length) { el.innerHTML = html + '<div class="card empty">No hay partidos jugados con estos filtros.</div>' + footer(); return; }
+    var w = 0, d = 0, l = 0, f = 0, a = 0, cs = 0, home = { n: 0, w: 0, d: 0, l: 0, f: 0, a: 0 }, away = { n: 0, w: 0, d: 0, l: 0, f: 0, a: 0 }, best = null;
+    ms.forEach(function (m) {
+      var s = sc(m), r = res(m), side = isHome(m) ? home : away;
+      f += s.f; a += s.a; if (s.a === 0) cs++;
+      side.n++; side.f += s.f; side.a += s.a;
+      if (r === "G") { w++; side.w++; if (!best || (s.f - s.a) > (best.s.f - best.s.a) || ((s.f - s.a) === (best.s.f - best.s.a) && s.f > best.s.f)) best = { m: m, s: s }; }
+      else if (r === "E") { d++; side.d++; } else { l++; side.l++; }
+    });
+    var n = ms.length;
+    var pc = function (x) { return Math.round(x / n * 100) + "%"; }, dgv = f - a;
+    html += '<section class="sec"><p class="cap">' + esc(scopeLabel()) + '</p><div class="card rec">' +
+      '<div class="rec-top"><b>' + n + (n === 1 ? ' partido' : ' partidos') + '</b><span>' + Math.round((w * 3 + d) / (n * 3) * 100) + '% de los puntos</span></div>' +
+      '<div class="rec-three"><div><span class="rn g">' + w + '</span><small>Ganados<br>' + pc(w) + '</small></div><div><span class="rn">' + d + '</span><small>Empatados<br>' + pc(d) + '</small></div><div><span class="rn r">' + l + '</span><small>Perdidos<br>' + pc(l) + '</small></div></div>' +
+      '<div class="rec-bar" aria-hidden="true"><i style="flex:' + w + ';background:var(--win)"></i><i style="flex:' + d + ';background:var(--bar-draw)"></i><i style="flex:' + l + ';background:var(--cardenal)"></i></div>' +
+      '<div class="rec-sep"></div>' +
+      '<div class="rec-goals"><div><span class="rn g">' + f + '</span><small>Goles a favor</small></div><span class="rec-chip">DG ' + (dgv > 0 ? "+" : "") + dgv + '</span><div><span class="rn r">' + a + '</span><small>Goles recibidos</small></div></div>' +
+      '<div class="rec-bar thin" aria-hidden="true"><i style="flex:' + Math.max(f, 0.01) + ';background:var(--win)"></i><i style="flex:' + Math.max(a, 0.01) + ';background:var(--cardenal)"></i></div>' +
+      '</div><div class="card rows">' +
+      '<div class="row-i"><div class="t">Goles por partido</div><div class="v num">' + (f / n).toFixed(2).replace(".", ",") + ' a favor · ' + (a / n).toFixed(2).replace(".", ",") + ' en contra</div></div>' +
+      '<div class="row-i"><div class="t">Vallas invictas</div><div class="v num">' + cs + ' de ' + n + '</div></div>' +
+      (best ? '<button class="row-i" data-id="' + esc(best.m.id) + '"><div class="t">Mayor victoria</div><div class="v num">' + best.s.f + '-' + best.s.a + ' a ' + esc(opp(best.m)) + '</div></button>' : "") +
+      '</div>';
+    var last = ms.slice(-5).reverse();
+    html += '<div class="card form" aria-label="Últimos cinco resultados"><span class="lbl">Últimos 5</span>' + last.map(function (m) { var r = res(m); return '<span class="res ' + r + '" title="' + esc(resWord(r) + " · " + m.h + " " + m.hs + "-" + m.as + " " + m.a) + '">' + r + '</span>'; }).join("") + '</div></section>';
+
+
+    // Scorers
+    var sc1 = {}, as1 = {}, hasAssist = false;
+    ms.forEach(function (m) {
+      m.g.forEach(function (g) {
+        if (g[1] !== 1 || g[4] === "og") return;
+        var k = g[2] + "|" + m.b;
+        if (!sc1[k]) sc1[k] = { n: g[2], b: m.b, g: 0, p: 0 };
+        sc1[k].g++; if (g[4] === "pen") sc1[k].p++;
+        if (g[3]) { hasAssist = true; var ka = g[3] + "|" + m.b; if (!as1[ka]) as1[ka] = { n: g[3], b: m.b, g: 0 }; as1[ka].g++; }
+      });
+    });
+    var top = Object.keys(sc1).map(function (k) { return sc1[k]; }).sort(function (x, y) { return y.g - x.g || x.n.localeCompare(y.n); }).slice(0, 10);
+    if (top.length) {
+      var mx = top[0].g;
+      html += '<section class="sec"><p class="cap">Goleadores</p><div class="card bars">' + top.map(function (s, i) {
+        return '<div class="bar-row"><span class="rk">' + (i + 1) + '</span><div style="min-width:0"><div class="nm"><span>' + esc(s.n) + '</span>' + (state.b === "all" ? '<small>' + (s.b === "F" ? "Fem." : "Masc.") + '</small>' : "") + (s.p ? '<small>' + s.p + ' de penal</small>' : "") + '</div><div class="track"><i style="width:' + (s.g / mx * 100).toFixed(1) + '%"></i></div></div><span class="ct">' + s.g + '</span></div>';
+      }).join("") + '</div></section>';
+    }
+    var topA = Object.keys(as1).map(function (k) { return as1[k]; }).sort(function (x, y) { return y.g - x.g || x.n.localeCompare(y.n); }).slice(0, 5);
+    if (hasAssist && topA.length) {
+      var mxa = topA[0].g;
+      html += '<section class="sec"><p class="cap">Asistencias</p><div class="card bars">' + topA.map(function (s, i) {
+        return '<div class="bar-row"><span class="rk">' + (i + 1) + '</span><div style="min-width:0"><div class="nm"><span>' + esc(s.n) + '</span></div><div class="track alt"><i style="width:' + (s.g / mxa * 100).toFixed(1) + '%"></i></div></div><span class="ct">' + s.g + '</span></div>';
+      }).join("") + '</div>' + (state.b !== "M" ? '<p class="status">Las asistencias solo están disponibles para el equipo masculino.</p>' : "") + '</section>';
+    }
+
+    // Goals by period
+    var per = [[0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]];
+    ms.forEach(function (m) { m.g.forEach(function (g) { per[bucket(minuteNum(g[0]))][g[1] === 1 ? 0 : 1]++; }); });
+    var pm = Math.max.apply(null, per.map(function (p) { return Math.max(p[0], p[1]); })) || 1;
+    var LBL = ["1-15'", "16-30'", "31-45'", "46-60'", "61-75'", "76-90'"];
+    html += '<section class="sec"><p class="cap">Goles por tramo del partido</p><div class="card"><div class="legend"><span>A favor</span><span class="ag">En contra</span></div><div class="period">' +
+      per.map(function (p, i) { return '<div class="prow"><span class="pl">' + LBL[i] + '</span><span class="pbar for"><i style="width:' + (p[0] / pm * 100).toFixed(1) + '%"></i>' + p[0] + '</span><span class="pbar ag"><i style="width:' + (p[1] / pm * 100).toFixed(1) + '%"></i>' + p[1] + '</span></div>'; }).join("") +
+      '</div><p class="tnote">Los goles en tiempo añadido cuentan en el tramo 31-45\' o 76-90\'.</p></div></section>';
+
+    // Team averages (only matches with stats)
+    var withS = ms.filter(function (m) { return m.s && m.s.pos; });
+    if (withS.length) {
+      var avg = function (k, i) { var arr = withS.filter(function (m) { return m.s[k]; }); if (!arr.length) return null; return arr.reduce(function (t, m) { return t + m.s[k][i]; }, 0) / arr.length; };
+      var rowsA = [["Posesión", "pos", "%"], ["Remates", "sh", ""], ["Remates al arco", "sot", ""], ["Córners", "co", ""], ["Faltas", "fo", ""], ["Atajadas", "sv", ""]];
+      html += '<section class="sec"><p class="cap">Promedios por partido · ' + withS.length + ' con estadísticas</p><div class="card sbars">' + rowsA.map(function (r) {
+        var x = avg(r[1], 0), y = avg(r[1], 1); if (x == null) return "";
+        var t = Math.max(x + y, 0.01);
+        return '<div class="sbar"><div class="lab"><b>' + x.toFixed(1).replace(".", ",") + r[2] + '</b><span>' + r[0] + '</span><b>' + y.toFixed(1).replace(".", ",") + r[2] + '</b></div><div class="dual"><div><i style="width:' + (x / t * 100).toFixed(1) + '%"></i></div><div><i style="width:' + (y / t * 100).toFixed(1) + '%"></i></div></div></div>';
+      }).join("") + '<p class="status" style="margin:0">Izquierda Santa Fe, derecha rivales. Fuente: ESPN; no hay estadísticas de la Copa BetPlay ni del equipo femenino.</p></div></section>';
+    }
+
+    html += footer();
+    el.innerHTML = html;
+  }
+  function kpi(k, n, cls) { return '<div class="kpi' + (cls ? " " + cls : "") + '"><span class="k">' + k + '</span><span class="n">' + n + '</span></div>'; }
+  function scopeLabel() { return (state.b === "all" ? "Masculino y femenino" : state.b === "M" ? "Masculino" : "Femenino") + " · " + (state.k === "all" ? "todos los torneos" : KNAMES[state.k]); }
+
+  function footer() {
+    var u = pd(DATA.updated);
+    return '<footer class="foot"><span>Actualizado el ' + u.da + ' de ' + MONL[u.mo - 1].toLowerCase() + ' de ' + u.y + '. Horas de Colombia.</span><span>Fuentes: ' + esc(DATA.sources.join(" · ")) + '.</span><span>Página de hinchas, no oficial. Sin relación con el club.</span></footer>';
+  }
+
+  /* ---------- Sheet ---------- */
+  var lastFocus = null;
+  function openSheet(id) {
+    var m = DATA.matches.filter(function (x) { return x.id === id; })[0];
+    if (!m) return;
+    lastFocus = document.activeElement;
+    var r = res(m);
+    var ev = m.g.map(function (g) { return { min: g[0], n: minuteNum(g[0]), sf: g[1] === 1, kind: "g", who: g[2], ast: g[3], tag: g[4] }; })
+      .concat((m.r || []).map(function (x) { return { min: x[0], n: minuteNum(x[0]), sf: x[1] === 1, kind: "r", who: x[2] }; }));
+    function extra(s) { var p = String(s).replace("'", "").split("+"); return p[1] ? Number(p[1]) : 0; }
+    ev.forEach(function (e) { e.k = e.n + extra(e.min) / 100; });
+    ev.sort(function (x, y) { return x.k - y.k; });
+    var hsRun = 0, asRun = 0;
+    var tl = ev.map(function (e) {
+      var det = "";
+      if (e.kind === "g") {
+        var homeGoal = (e.sf && isHome(m)) || (!e.sf && !isHome(m));
+        if (homeGoal) hsRun++; else asRun++;
+        var team = e.sf ? SF : opp(m);
+        det = "Gol de " + esc(team) + " · " + hsRun + "-" + asRun + (e.tag === "pen" ? " · de penal" : "") + (e.tag === "og" ? " · en contra (autogol)" : "") + (e.ast ? " · asistencia de " + esc(e.ast) : "");
+        return '<div class="ev' + (e.sf ? " sf" : "") + '"><span class="min">' + esc(e.min) + '</span><div><div class="who">' + esc(e.who) + '</div><div class="det">' + det + '</div></div></div>';
+      }
+      return '<div class="ev"><span class="min">' + esc(e.min) + '</span><div><div class="who"><span class="rc" aria-hidden="true"></span>' + esc(e.who) + '</div><div class="det">Tarjeta roja · ' + esc(e.sf ? SF : opp(m)) + '</div></div></div>';
+    }).join("");
+    var stats = "";
+    if (m.s) {
+      var L = [["pos", "Posesión", "%"], ["sh", "Remates", ""], ["sot", "Remates al arco", ""], ["co", "Córners", ""], ["fo", "Faltas", ""], ["ye", "Amarillas", ""], ["re", "Rojas", ""], ["sv", "Atajadas", ""], ["off", "Fueras de lugar", ""], ["pa", "Pases completos", ""]];
+      var home = isHome(m);
+      stats = L.filter(function (x) { return m.s[x[0]]; }).map(function (x) {
+        var v = m.s[x[0]], hv = home ? v[0] : v[1], av = home ? v[1] : v[0], t = Math.max(hv + av, 0.01);
+        return '<div class="sbar"><div class="lab"><b>' + String(hv).replace(".", ",") + x[2] + '</b><span>' + x[1] + '</span><b>' + String(av).replace(".", ",") + x[2] + '</b></div><div class="dual"><div><i style="width:' + (hv / t * 100).toFixed(1) + '%;background:' + (home ? "var(--cardenal)" : "var(--ink-2)") + '"></i></div><div><i style="width:' + (av / t * 100).toFixed(1) + '%;background:' + (home ? "var(--ink-2)" : "var(--cardenal)") + '"></i></div></div></div>';
+      }).join("");
+    }
+    var hw = m.hs > m.as || (m.pen && m.pen[0] > m.pen[1]);
+    var sub = [];
+    if (m.pen) sub.push(penTxt(m));
+    if (m.note) sub.push(esc(m.note));
+    var html = '<div class="grab" aria-hidden="true"></div><div class="wrap"><div class="inner">' +
+      '<div class="bar"><span class="cap" style="margin:0">' + esc(m.b === "F" ? "Femenino" : "Masculino") + '</span><button class="close" id="sheet-close">Cerrar</button></div>' +
+      '<div><h2 id="sheet-title">' + esc(C[m.c].n) + '</h2><p class="status" style="margin:2px 0 0">' + esc(m.st) + ' · ' + esc(fmtDate(m.d)) + '</p></div>' +
+      '<div class="card"><div class="board"><div class="side">' + mark(m.h) + '<span class="nm">' + esc(m.h) + '</span></div>' +
+      '<div class="big"><span>' + m.hs + '</span><span class="dash">-</span><span>' + m.as + '</span></div>' +
+      '<div class="side">' + mark(m.a) + '<span class="nm">' + esc(m.a) + '</span></div></div>' +
+      '<div class="board-sub"><span class="res ' + r + '" style="display:inline-grid;vertical-align:middle;margin-right:6px">' + r + '</span>' + resWord(r) + (sub.length ? ' · ' + sub.join(" · ") : "") + '</div></div>' +
+      '<section class="sec"><p class="cap">Goles' + ((m.r || []).length ? " y expulsiones" : "") + '</p><div class="card tl">' + (tl || '<div class="empty">Sin goles</div>') + '</div></section>' +
+      (stats ? '<section class="sec"><p class="cap">Estadísticas</p><div class="card sbars"><div class="sbar"><div class="lab"><b>' + esc(m.h) + '</b><span></span><b>' + esc(m.a) + '</b></div></div>' + stats + '</div></section>' : "") +
+      '<section class="sec"><p class="cap">Datos del partido</p><div class="card rows info">' +
+      '<div class="row-i"><div class="t">Estadio</div><div class="v">' + esc(m.v) + '</div></div>' +
+      '<div class="row-i"><div class="t">Fecha</div><div class="v">' + esc(fmtDate(m.d)) + (pd(m.d).t ? " (hora de Colombia)" : "") + '</div></div>' +
+      (m.att ? '<div class="row-i"><div class="t">Asistencia</div><div class="v num">' + m.att.toLocaleString("es-CO") + ' espectadores</div></div>' : "") +
+      '</div></section></div></div>';
+    var sh = $("sheet");
+    sh.innerHTML = html;
+    sh.hidden = false; $("scrim").hidden = false;
+    document.body.classList.add("noscroll");
+    sh.scrollTop = 0;
+    $("sheet-close").addEventListener("click", closeSheet);
+    $("sheet-close").focus();
+  }
+  function closeSheet() {
+    $("sheet").hidden = true; $("scrim").hidden = true;
+    document.body.classList.remove("noscroll");
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  $("scrim").addEventListener("click", closeSheet);
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !$("sheet").hidden) closeSheet(); });
+
+  /* ---------- Controls ---------- */
+  function syncControls() {
+    ["M", "F"].forEach(function (b) { $("b-" + b).setAttribute("aria-pressed", String(state.b === b)); });
+    ["all", "liga", "copa", "int"].forEach(function (k) {
+      var btn = $("k-" + k);
+      btn.setAttribute("aria-pressed", String(state.k === k));
+      var has = k === "all" || ORDER.some(function (c) { return C[c].k === k && (state.b === "all" || C[c].b === state.b); });
+      btn.disabled = !has;
+    });
+    ["partidos", "posiciones", "estadisticas"].forEach(function (t) {
+      $("v-" + t).hidden = state.tab !== t;
+      if (state.tab === t) $("t-" + t).setAttribute("aria-current", "page"); else $("t-" + t).removeAttribute("aria-current");
+    });
+    $("glass").style.setProperty("--i", String(["partidos", "posiciones", "estadisticas"].indexOf(state.tab)));
+    $("title").textContent = TITLES[state.tab];
+    $("tb-sub").textContent = "Temporada 2026 · " + (state.b === "F" ? "Femenino" : "Masculino");
+    $("subseg").hidden = state.tab !== "partidos";
+  }
+  function render() {
+    if (state.k !== "all" && !ORDER.some(function (c) { return C[c].k === state.k && (state.b === "all" || C[c].b === state.b); })) state.k = "all";
+    syncControls();
+    if (state.tab === "partidos") renderPartidos();
+    else if (state.tab === "posiciones") renderPosiciones();
+    else renderEstadisticas();
+    try { localStorage.setItem("sf26", JSON.stringify({ b: state.b, k: state.k, sub: state.sub })); } catch (e) {}
+  }
+  document.querySelectorAll("[data-b]").forEach(function (btn) { btn.addEventListener("click", function () { state.b = btn.getAttribute("data-b"); render(); }); });
+  document.querySelectorAll("[data-k]").forEach(function (btn) { btn.addEventListener("click", function () { state.k = btn.getAttribute("data-k"); render(); }); });
+  document.querySelectorAll("[data-tab]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      state.tab = btn.getAttribute("data-tab");
+      try { history.replaceState(null, "", "#" + state.tab); } catch (e) {}
+      render(); window.scrollTo(0, 0);
+    });
+  });
+  document.addEventListener("click", function (e) {
+    var sb = e.target.closest("[data-sub]");
+    if (sb) { state.sub = sb.getAttribute("data-sub"); render(); return; }
+    var t = e.target.closest("[data-id]");
+    if (t) openSheet(t.getAttribute("data-id"));
+  });
+  window.addEventListener("hashchange", function () { var h = location.hash.replace("#", ""); if (TITLES[h] && h !== state.tab) { state.tab = h; render(); } });
+  if (!state.sub) {
+    var td = todayCO();
+    state.sub = DATA.matches.concat(DATA.upcoming).some(function (x) { return x.d && x.d.slice(0, 10) === td && x.b === state.b; }) ? "hoy" : "pasados";
+  }
+  render();
+})();
+</script>
+
+</body></html>
